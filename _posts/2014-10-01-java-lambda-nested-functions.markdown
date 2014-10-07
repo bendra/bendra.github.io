@@ -263,7 +263,7 @@ Note that to do this we have to:
 
 #Conclusion
 
-Overall, Java nested functions can approximate the functionality of what true nested functions offer in a language like Javascript, however in many scenarios the shoe-horned nature of the solution becomes apparent.  This example to my eye and experience results in some awkward looking and not necessarily intuitive patterns.
+Overall, Java Lambda expressions can approximate the functionality of what true nested functions offer in a language like Javascript, however in many scenarios the shoe-horned nature of the solution becomes apparent.  This example to my eye and experience results in some awkward looking and not necessarily intuitive patterns.
 
 These patterns will make sense to an experienced Java developer and won't present a problem for them,  however in terms of attracting and gaining mind share among junior developers they represent another hurdle to overcome.  Java is no longer a small or simple language, and developers want to spend their time developing application code and not on learning patterns forced upon them by the idiosyncrasies of a programing language.
 
