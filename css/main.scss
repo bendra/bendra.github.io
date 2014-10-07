@@ -11,7 +11,7 @@ $base-font-size:   16px;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
 
-$spacing-unit:     30px;
+$spacing-unit:     20px;
 
 $text-color:       #111;
 $background-color: #fdfdfd;
@@ -47,3 +47,19 @@ $on-laptop:        800px;
         "layout",
         "syntax-highlighting"
 ;
+
+
+.site-header {
+	background-color: #BADA55;
+}
+
+body {
+font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, "MS PGothic", Osaka, Sans-Serif;
+font-size: 1em;
+line-height: 1.625em;
+}
+
+h1.page-heading {
+font-size: 56px;
+margin-bottom: 26px;
+}
