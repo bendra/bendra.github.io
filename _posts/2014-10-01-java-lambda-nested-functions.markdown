@@ -263,10 +263,10 @@ Note that to do this we have to:
 
 #Conclusion
 
-Overall, Java Lambda expressions can approximate the functionality of what true nested functions offer in a language like Javascript, however in many scenarios the shoe-horned nature of the solution becomes apparent.  This example to my eye and experience results in some awkward looking and not necessarily intuitive patterns.
+Overall, Java Lambda expressions can approximate the functionality of what true nested functions offer in a language like Javascript, however in many scenarios the shoe-horned nature of the solution becomes apparent.  This example (at least to my eye and experience) results in awkward looking and unintuitive code.
 
-These patterns will make sense to an experienced Java developer and won't present a problem for them,  however in terms of attracting and gaining mind share among junior developers they represent another hurdle to overcome.  Java is no longer a small or simple language, and developers want to spend their time developing application code and not on learning patterns forced upon them by the idiosyncrasies of a programing language.
+These patterns will make sense to an experienced Java developer who understands what the underlying class representation of the code will be and won't present a problem for them.  However in terms of attracting and gaining mind share among junior developers they represent yet another hurdle to overcome.  Java is no longer a small or simple language, and developers want to spend their time developing application code and not on learning patterns forced upon them by the idiosyncrasies of a platform.
 
-For an experienced Java developer, these considerations are minor compared to the question of how the new syntax affects application development, particularly web and network applications based on the increasingly popular asynchronous I/O model.  I'll explore this in a later article! 
+For the future viability of Java these considerations are minor compared to the question of how the new syntax affects application development - particularly web and network applications based on the increasingly popular asynchronous I/O model.  I'll explore this in a later article! 
 
 [scala-post]: https://groups.google.com/forum/#!topic/scala-language/7_c2VpHexEM
