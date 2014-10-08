@@ -46,7 +46,7 @@
           <li>
             <a href="https://linkedin.com/in/{{ site.linkedin_username }}">
               <span class="icon  icon--linkedin">
-                <img src=/resources/linkedin-16x16.png>
+                <img src=/resources/inkedin-16x16.png>
               </span>
 
               <span class="username">{{ site.linkedin_username }}</span>
