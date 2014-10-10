@@ -3,6 +3,7 @@ layout: post
 title:  "Blast from the past: my first Java program"
 date:   2014-10-04 22:35:15
 categories: java applet
+comments: true
 ---
 #You have to start somewhere...
 This is the very first Java application I wrote, anywhere.  Its also one of the first nontrivial programs I wrote in ANY programing language.  I need to clean up the code before I can throw it on GitHub without dying of embarassment, but I don't see why I can't post the resulting applet
