@@ -19,6 +19,8 @@ I thought you'd never ask! _**(NOTE: article continues below, please keep readin
   <param name="code" value="v2.MissileCommandApplet.class" />
 </object>
 
+##BUTTONS Z, X, AND C SELECT BASE, MOUSE FIRES MISSILE
+
 #But wait, I can't run that!
 Ok, you are probably using a recent version of Java.  As of Java 7 update 51, Oracle is [requiring](https://blogs.oracle.com/java-platform-group/entry/new_security_requirements_for_rias) that all applets be signed by a trusted party to run in the browser.  Period. And that means coughing up dough for a code signing key from a CA trusted by the JRE (which will expire if it is not periodically renewed).
 
@@ -27,3 +29,5 @@ The applet model specifies that applets are only allowed a limited set of functi
 
 #Ok, so what to do? 
 Well, if you like you can add http://bendra.github.io to your [Java Exceptions Site list](http://www.java.com/en/download/help/java_blocked.xml), but that's probably too much to ask.  I personally gave up on applets over a decade ago so I'm not paying.  Hoewever, I've written a runner class to allow you to run my first app as a standalone application using a self-executing Jar.  Dowlnoad it [here](/resources/MissileCommandRunner.jar), of course you will need a JRE.  Just download this file and run it with java -jar MissileCommandRunner.jar (you might be able to just click on it if you have your file associations right).
+
+## AGAIN, BUTTONS Z, X, C SELECT BASE, MOUSE FIRES MISSILE
