@@ -12,7 +12,7 @@ This is the very first Java application I wrote, anywhere.  Its also one of the 
 Believe it or not, applets (which now are just another kind of plug-in) were  supposed to be the original killer feature of Java.  Things have changed a lot since then, and you have to deal with code signing and anoying warning messages even if your app stays completely within the applet sandbox (as this one does).  I can only appologize for this.
 
 #Ok, let's see it!
-I thought you'd never ask!
+I thought you'd never ask! _**(NOTE: article continues below, please keep reading!)**_
 
 <object type="application/x-java-applet" name="MissileCommander" width="500" height="435">
   <param name="archive" value="/resources/missileCommand.jar" />
