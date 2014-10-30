@@ -59,7 +59,7 @@ Optional<T> reduce(BinaryOperator<T> accumulator);
 Our reductions should return a Stream instead of a single (Optional) result; also we need to pass the input Stream as an argument:
 
 {% highlight java %}
-public static <T> Stream<T> reductions(Stream<T> input, BinaryOperator<T> op)
+public static <T> Stream<T> reductions(Stream<T> input, BinaryOperator<T> accumulator)
 {% endhighlight %}
 
 #Implementing Reductions
@@ -69,14 +69,14 @@ The first place to look for how to implement the reductions() of course should b
 Fortunately its not too hard to implement the logic of what we want to do using the Stream.map() method:
 
 {% highlight java %}
-public static <T> Stream<T> reductions(Stream<T> input, BinaryOperator<T> op) {
+public static <T> Stream<T> reductions(Stream<T> input, BinaryOperator<T> accumulator) {
 
    <T> accTot = null;
    return input.map(i -> {
       if (accTot == null) {
          accTot = i;
       } else {
-         accTot = op.apply(i, accTot);
+         accTot = accumulator.apply(i, accTot);
       }
       return accTot;
    });
@@ -103,13 +103,13 @@ public static class StreamRef<T> {
  /**
   * Produces the intermediate results from a "reduce" operation
   */
-public static <T> Stream<T> reductions(Stream<T> input, BinaryOperator<T> op) {
+public static <T> Stream<T> reductions(Stream<T> input, BinaryOperator<T> accumulator) {
    final StreamRef<T> accTot = new StreamRef<T>(null);
    return input.map(i -> {
       if (accTot.val == null) {
          accTot.val = i;
       } else {
-         accTot.val = op.apply(i, accTot.val);
+         accTot.val = accumulator.apply(i, accTot.val);
       }
       return accTot.val;
    });
@@ -143,7 +143,7 @@ public static class BooleanStreamRef {
 /**
  * Produces the intermediate results from a "reduce" operation
  */
-public static IntStream reductions(IntStream input, IntBinaryOperator op) {
+public static IntStream reductions(IntStream input, IntBinaryOperator accumulator) {
    final IntStreamRef accTot = new IntStreamRef(0);
    final BooleanStreamRef empty = new BooleanStreamRef(true);
    return input.map(i -> {
@@ -151,7 +151,7 @@ public static IntStream reductions(IntStream input, IntBinaryOperator op) {
          accTot.val = i;
          accTot.empty = false;
       } else {
-         accTot.val = op.applyAsInt(i, accTot.val);
+         accTot.val = accumulator.applyAsInt(i, accTot.val);
       }
       return accTot.val;
    });
