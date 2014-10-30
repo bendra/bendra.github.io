@@ -124,8 +124,18 @@ I've found this both encouraging and disappointing.  The good news is the reduct
 
 public static class IntStreamRef {
    public int val;
+   public boolean empty = true;
 
-   public IntStreamRef(int aVal) {
+   public IntStreamRef(aVal) {
+      val = aVal;
+      empty = false;
+   }
+}
+
+public static class BooleanStreamRef {
+   public boolean val;
+
+   public BooleanStreamRef(boolean aVal) {
       val = aVal;
    }
 }
@@ -139,7 +149,7 @@ public static IntStream reductions(IntStream input, IntBinaryOperator op) {
    return input.map(i -> {
       if (empty.val) {
          accTot.val = i;
-         empty.val = false;
+         accTot.empty = false;
       } else {
          accTot.val = op.applyAsInt(i, accTot.val);
       }
@@ -149,6 +159,6 @@ public static IntStream reductions(IntStream input, IntBinaryOperator op) {
 {% endhighlight %}
 
 
-Its not hard, but it leads to massive code bloat when all the primitive types are taken into account.  One more note that I'll add is that the internal implementations of the Java 8 Streams classes are not very functional.  I may have more to say on this later.
+Its not hard, but it leads to massive code bloat when all the primitive types are taken into account.  Note the need for a BoolanSttreamRef because there is no way to note a null int value (and I'll skip the customary rant about Java primitive types).  One more note that I'll add is that the internal implementations of the Java 8 Streams classes are not very functional.  I may have more to say on this later.
 
 I've included these methods into a StreamUtil library in [my github account](https://www.github.com/bendra/bendra-util) which I'll be adding to as I discover new things.  Part II coming soon!
