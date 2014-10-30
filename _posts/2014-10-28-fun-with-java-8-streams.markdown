@@ -14,7 +14,7 @@ I'm assuming on the part of the reader a basic familiarity with Java Lambdas. I'
 
 #Reduce Function
 
-The java.util.stream.Stream class contains a reduce method, which should be familiar to anyone who has done functional programing using e.g. Lisp, Python, Ruby, etc.  Basically reduce is a [Higher-order function](http://en.wikipedia.org/wiki/Higher-order_function) which iterates over a series of elements and recursively applies an operation to them to produce a single output value.  A trivial example in lisp would be:
+The java.util.stream.Stream class contains a reduce method, which should be familiar to anyone who has done functional programing using e.g. Lisp, Python, Ruby, etc.  Basically reduce is a [Higher-order function](http://en.wikipedia.org/wiki/Higher-order_function) which iterates over a series of elements and recursively applies an operation to them to produce a single output value.  A trivial example in Lisp would be:
 
 {% highlight lisp %}
 > (reduce * '(2 3 4))
