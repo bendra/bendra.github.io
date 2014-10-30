@@ -64,7 +64,7 @@ public static <T> Stream<T> reductions(Stream<T> input, BinaryOperator<T> op)
 
 #Implementing Reductions
 
-The first place to look for how to implement the reductions() of course should be the JDK's implementation of Stream.reduce().  This is implemented in java.util.stream.ReferencePipeline (and its parent class java.util.stream.AbstractPipeline), but unfortunately its not much help. The implementation is built around the helper classes java.util.stream.ReduceOps and its inner class ReducingSink and box, all of which are both final and package-visable (aka "public for me, private for you").  This has the effect of making them impossible to reuse even if we could figure out how to work with the.  So we are on our own.
+The first place to look for how to implement the reductions() of course should be the JDK's implementation of Stream.reduce().  This is implemented in java.util.stream.ReferencePipeline (and its parent class java.util.stream.AbstractPipeline), but for us it's not much help. The implementation is built around the helper classes java.util.stream.ReduceOps and its inner class ReducingSink and box, all of which are both final and package-visable (aka "public for me, private for you").  This has the effect of making them impossible to reuse even if we could figure out how to work with the.  So we are on our own.
 
 Fortunately its not too hard to implement the logic of what we want to do using the Stream.map() method:
 
@@ -83,7 +83,7 @@ public static <T> Stream<T> reductions(Stream<T> input, BinaryOperator<T> op) {
 }
 {% endhighlight %}
 
-Unfortunately this runs into the same problem noted in [a previous article]({% post_url 2014-10-01-java-lambda-nested-functions%}), which is to say the variable accTot can't be referenced in the lambda expression unless you make it final, in which case you can't modify it.  Since this keeps coming up I'm going to bite the bullet and make a helper class:
+If you try to compile this code you'll see it runs into the same problem noted in [a previous article]({% post_url 2014-10-01-java-lambda-nested-functions%}), which is to say the variable accTot can't be referenced in the lambda expression unless you make it final, in which case you can't modify it.  Since this keeps coming up I'm going to bite the bullet and make a helper class:
 
 {% highlight java %}
 
@@ -159,6 +159,6 @@ public static IntStream reductions(IntStream input, IntBinaryOperator op) {
 {% endhighlight %}
 
 
-Its not hard, but it leads to massive code bloat when all the primitive types are taken into account.  Note the need for a BoolanSttreamRef because there is no way to note a null int value (and I'll skip the customary rant about Java primitive types).  One more note that I'll add is that the internal implementations of the Java 8 Streams classes are not very functional.  I may have more to say on this later.
+Its not hard, but it leads to massive code bloat when all the primitive types are taken into account.  Note the need for a BooelanStreamRef because there is no way to note a null int value (and I'll skip the customary rant about Java primitive types).  One more note that I'll add is that the internal implementations of the Java 8 Streams classes are not very functional.  I may have more to say on this later.
 
 I've included these methods into a StreamUtil library in [my github account](https://www.github.com/bendra/bendra-util) which I'll be adding to as I discover new things.  Part II coming soon!
