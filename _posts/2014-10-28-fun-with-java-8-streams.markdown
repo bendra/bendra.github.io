@@ -64,7 +64,7 @@ public static <T> Stream<T> reductions(Stream<T> input, BinaryOperator<T> accumu
 
 #Implementing Reductions
 
-The first place to look for how to implement the reductions() of course should be the JDK's implementation of Stream.reduce().  This is implemented in java.util.stream.ReferencePipeline (and its parent class java.util.stream.AbstractPipeline), but for us it's not much help. The implementation is built around the helper classes java.util.stream.ReduceOps and its inner class ReducingSink and Box, all of which are both final and package-visable (aka "public for me, private for you").  This has the effect of making them impossible to reuse even if we could figure out how to work with the.  So we are on our own.
+The first place to look for how to implement the reductions() of course should be the JDK's implementation of Stream.reduce().  This is implemented in java.util.stream.ReferencePipeline (and its parent class java.util.stream.AbstractPipeline), but for us it's not much help. The implementation is built around the helper classes java.util.stream.ReduceOps and its inner class ReducingSink and Box, all of which are both final and package-visable (aka "public for me, private for you").  This has the effect of making them impossible to reuse even if we could figure out how to work with them.  So we are on our own.
 
 Fortunately its not too hard to implement the logic of what we want to do using the Stream.map() method:
 
