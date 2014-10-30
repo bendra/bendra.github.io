@@ -118,7 +118,7 @@ public static <T> Stream<T> reductions(Stream<T> input, BinaryOperator<T> op) {
 
 # Conclusion
 
-I've found this both encouraging and disappointing.  The good news is the reductions method is not hard to write and looks fairly reasonable.  A disapointing part is that it was impossible to reuse any of the code written for reduce.  Another aspect to this which [others have noted](http://java.dzone.com/articles/whats-wrong-java-8-part-ii): the function we wrote only works with Object types.  To handle an IntStream we need to write another reductions function with a new signature.  
+I've found this both encouraging and disappointing.  The good news is the reductions method is not hard to write and looks fairly reasonable.  A disappointing part is that it was impossible to reuse any of the code written for reduce.  Another aspect to this which [others have noted](http://java.dzone.com/articles/whats-wrong-java-8-part-ii): the function we wrote only works with Object types.  To handle an IntStream we need to write another reductions function with a new signature.  
 
 {% highlight java %}
 
