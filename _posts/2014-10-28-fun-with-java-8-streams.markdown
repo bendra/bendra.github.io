@@ -64,7 +64,7 @@ public static <T> Stream<T> reductions(Stream<T> input, BinaryOperator<T> op)
 
 #Implementing Reductions
 
-The first place to look for how to implement the reductions() of course should be the JDK's implementation of Stream.reduce().  This is implemented in java.util.stream.ReferencePipeline (and its parent class java.util.stream.AbstractPipeline, but unfortunately its not much help. The implementation is built around the helper classes java.util.stream.ReduceOps and its inner class ReducingSink and box, all of which are both final and package-visable (aka "public for me, private for you").  This has the effect of making them impossible to reuse even if we could figure out how to work with the.  So we are on our own.
+The first place to look for how to implement the reductions() of course should be the JDK's implementation of Stream.reduce().  This is implemented in java.util.stream.ReferencePipeline (and its parent class java.util.stream.AbstractPipeline), but unfortunately its not much help. The implementation is built around the helper classes java.util.stream.ReduceOps and its inner class ReducingSink and box, all of which are both final and package-visable (aka "public for me, private for you").  This has the effect of making them impossible to reuse even if we could figure out how to work with the.  So we are on our own.
 
 Fortunately its not too hard to implement the logic of what we want to do using the Stream.map() method:
 
@@ -118,7 +118,7 @@ public static <T> Stream<T> reductions(Stream<T> input, BinaryOperator<T> op) {
 
 # Conclusion
 
-I've found this both encouraging and disappointing.  The good news is the reductions method is not hard to write and looks fairly reasonable.  The disapointing part is that it was impossible to reuse any of the code written for reduce.  There's another aspect to this which [others have noted](http://java.dzone.com/articles/whats-wrong-java-8-part-ii): the function we wrote only works with Object types.  To handle an IntStream we need to write anoter reductions function with a new signature.  
+I've found this both encouraging and disappointing.  The good news is the reductions method is not hard to write and looks fairly reasonable.  A disapointing part is that it was impossible to reuse any of the code written for reduce.  Another aspect to this which [others have noted](http://java.dzone.com/articles/whats-wrong-java-8-part-ii): the function we wrote only works with Object types.  To handle an IntStream we need to write anoter reductions function with a new signature.  
 
 {% highlight java %}
 
@@ -149,6 +149,6 @@ public static IntStream reductions(IntStream input, IntBinaryOperator op) {
 {% endhighlight %}
 
 
-Its not hard, but it leads to massive code bloat when all the primitive types are taken into account.
+Its not hard, but it leads to massive code bloat when all the primitive types are taken into account.  One more note that I'll add is that the internal implementations of the Java 8 Streams classes are not very functional.  I may have more to say on this later.
 
 I've included these methods into a StreamUtil library in [my github account](https://www.github.com/bendra/bendra-util) which I'll be adding to as I discover new things.
