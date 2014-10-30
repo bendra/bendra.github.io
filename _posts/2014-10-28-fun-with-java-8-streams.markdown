@@ -159,6 +159,6 @@ public static IntStream reductions(IntStream input, IntBinaryOperator op) {
 {% endhighlight %}
 
 
-Its not hard, but it leads to massive code bloat when all the primitive types are taken into account.  Note the need for a BooelanStreamRef because there is no way to note a null int value (and I'll skip the customary rant about Java primitive types).  One more note that I'll add is that the internal implementations of the Java 8 Streams classes are not very functional.  I may have more to say on this later.
+Its not hard, but it leads to massive code bloat when all the primitive types are taken into account.  Note the need for a BooelanStreamRef because there is no way to reference a null int value (and I'll skip the customary rant about Java primitive types).  One more note that I'll add is that the internal implementations of the Java 8 Streams classes are not very functional.  I may have more to say on this later.
 
 I've included these methods into a StreamUtil library in [my github account](https://www.github.com/bendra/bendra-util) which I'll be adding to as I discover new things.  Part II coming soon!
