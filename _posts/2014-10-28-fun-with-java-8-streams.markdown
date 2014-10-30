@@ -159,6 +159,6 @@ public static IntStream reductions(IntStream input, IntBinaryOperator accumulato
 {% endhighlight %}
 
 
-Its not hard, but it leads to massive code bloat when all the primitive types are taken into account.  Note the need for a BooelanStreamRef because there is no way to reference a null int value (and I'll skip the customary rant about Java primitive types).  As a final note that I'll emphasize is that, while the internal implementations of the Java 8 Streams classes are functional in that they do not rely on side-effects, they appear to be designed conciously to prevent reuse.  This seems extremely miopic on the part of <del>Sun</del>Oracle and I may have more to say on this later.
+Its not hard, but it leads to massive code bloat when all the primitive types are taken into account.  Note the need for a BooelanStreamRef because there is no way to reference a null int value (and I'll skip the customary rant about Java primitive types).  As a final note that I'll emphasize is that, while the internal implementations of the Java 8 Streams classes not very functional in that they often rely on side-effects, and the parts that are function appear to be designed conciously to prevent reuse.  This seems extremely miopic on the part of <del>Sun</del>Oracle and I may have more to say on this later.
 
 I've included these methods into a StreamUtil library in [my github account](https://www.github.com/bendra/bendra-util) which I'll be adding to as I discover new things.  Part II coming soon!
