@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Fun with Java 8 Streams"
+title:  "Fun with Java 8 Streams, Part I"
 date:   2014-10-28 22:35:15
 categories: java lambda stream 
 comments: true
@@ -118,7 +118,7 @@ public static <T> Stream<T> reductions(Stream<T> input, BinaryOperator<T> op) {
 
 # Conclusion
 
-I've found this both encouraging and disappointing.  The good news is the reductions method is not hard to write and looks fairly reasonable.  A disapointing part is that it was impossible to reuse any of the code written for reduce.  Another aspect to this which [others have noted](http://java.dzone.com/articles/whats-wrong-java-8-part-ii): the function we wrote only works with Object types.  To handle an IntStream we need to write anoter reductions function with a new signature.  
+I've found this both encouraging and disappointing.  The good news is the reductions method is not hard to write and looks fairly reasonable.  A disapointing part is that it was impossible to reuse any of the code written for reduce.  Another aspect to this which [others have noted](http://java.dzone.com/articles/whats-wrong-java-8-part-ii): the function we wrote only works with Object types.  To handle an IntStream we need to write another reductions function with a new signature.  
 
 {% highlight java %}
 
@@ -151,4 +151,4 @@ public static IntStream reductions(IntStream input, IntBinaryOperator op) {
 
 Its not hard, but it leads to massive code bloat when all the primitive types are taken into account.  One more note that I'll add is that the internal implementations of the Java 8 Streams classes are not very functional.  I may have more to say on this later.
 
-I've included these methods into a StreamUtil library in [my github account](https://www.github.com/bendra/bendra-util) which I'll be adding to as I discover new things.
+I've included these methods into a StreamUtil library in [my github account](https://www.github.com/bendra/bendra-util) which I'll be adding to as I discover new things.  Part II coming soon!
