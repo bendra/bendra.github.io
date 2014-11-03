@@ -83,7 +83,7 @@ public static <T> Stream<T> reductions(Stream<T> input, BinaryOperator<T> accumu
 }
 {% endhighlight %}
 
-If you try to compile this code you'll see it runs into the same problem noted in [a previous article]({% post_url 2014-10-01-java-lambda-nested-functions%}), which is to say the variable accTot can't be referenced in the lambda expression unless you make it final, in which case you can't modify it.  Since this keeps coming up I'm going to bite the bullet and make a helper class:
+If you try to compile this code you'll see it runs into the same problem noted in [a previous article]({% post_url 2014-10-01-java-lambda-nested-functions%}), which is to say the variable accTot can't be referenced in the lambda expression unless you make it final, in which case you can't modify its assignment.  Since this keeps coming up I'm going to bite the bullet and make a helper class:
 
 {% highlight java %}
 
