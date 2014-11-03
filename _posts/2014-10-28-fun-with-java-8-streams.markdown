@@ -116,7 +116,12 @@ public static <T> Stream<T> reductions(Stream<T> input, BinaryOperator<T> accumu
 }
 {% endhighlight %}
 
-There's a potential objection here: we are relying on side-effects of the map() function.  If the mapping of the supplied function to the elements does not happen in the expected order (which is NOT guaranteed by the platform, although in this case it could be expected to) we will get unexpected results.  I don't know if there is a good solution to this, but if I find one I will update this article to let you know. 	*edit: according to the java.util.stream package documentation: If a stream is ordered, most operations are constrained to operate on the elements in their encounter order; if the source of a stream is a List containing [1, 2, 3], then the result of executing map(x -> x***2) must be [2, 4, 6].  So I don't think there is a real problem here although one can argue about the code smell of side effects.*
+There's a potential objection here: we are relying on side-effects of the map() function.  If the mapping of the supplied function to the elements does not happen in the expected order (which is NOT guaranteed by the platform, although in this case it could be expected to) we will get unexpected results.  I don't know if there is a good solution to this, but if I find one I will update this article to let you know. 	
+*edit: according to the java.util.stream package documentation:*
+
+>If a stream is ordered, most operations are constrained to operate on the elements in their encounter order; if the source of a stream is a List containing [1, 2, 3], then the result of executing map(x -> x***2) must be [2, 4, 6].  
+
+*So I don't think there is a real problem here although one can argue about the code smell of side effects.*
 
 # Conclusion
 
