@@ -109,8 +109,9 @@ Note the mapToObj function to convert the IntStream to an object reference strea
 #Implementing Streams in reverse - Lists
 
 The same technique from above can be used to stream a List in reverse; however there are significant performance considerations that have to be taken into account.  There are many different types of Lists in java; principally:
+
 1 ArrayList/Vector - List backed by an array.  The same technique used for Arrays will work just fine.
-r
+
 2 LinkedList - Doubly-linked list data structure.  Because get-by-index is itself an O(n) operation, the implementation above will have O(n^2) performance, which is not acceptable.  You'd be better off reversing the list and streaming sequentially.
 
 Because LinkedList is double-linked, we can use a ListIterator to process the elements sequentially in either direction in constant time for each element.  LinkedList even provides a convenient descendingIterator() method to do just that.  There's no way to create a Stream directly using an Iteratory, which I found surprising.  Instead you have to go through a static method in StreamSupport using a *Spliterator*.  A Spliterator is essentially an Iterator with some added capabilitites for Streams; the name Spliterator refers to the fact that one of these capabilities is a method to split of a chunk of a stream for another thread to process.
