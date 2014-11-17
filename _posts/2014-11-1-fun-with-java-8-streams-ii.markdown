@@ -81,7 +81,7 @@ public static <T> Stream<T> streamInReverse(T[] input)
 
 {% endhighlight %}
 
-The Arrays class implementation of stream() relies on the class java.util.Spliterators$ArraySpliterator, which is package-visable and final (a pattern which I've [seen before]({% post_url 2014-10-28-fun-with-java-8-streams %}).  So we'll have to come up with our own solution. 
+The Arrays class implementation of stream() relies on the class java.util.Spliterators$ArraySpliterator, which is package-visable and final (a pattern which I've [seen before]({% post_url 2014-10-28-fun-with-java-8-streams %})).  So we'll have to come up with our own solution. 
 
 We can do this by
 
