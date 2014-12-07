@@ -126,7 +126,7 @@ If you want to learn more about Spliterators try [this post](http://stackoverflo
  * @return a stream of the elements in reverse
  */
 private static <T> Stream<T> streamInReverse(LinkedList<T> input) {
-  final Iterator<T> descendingIterator = input.descendingIterator();
+  Iterator<T> descendingIterator = input.descendingIterator();
   return StreamSupport.stream(Spliterators.spliteratorUnknownSize(
     descendingIterator, Spliterator.ORDERED), false);
 }
@@ -158,7 +158,7 @@ public static <T> Stream<T> streamInReverse(List<T> input) {
  * @return a stream of the elements in reverse
  */
 private static <T> Stream<T> streamInReverse(LinkedList<T> input) {
-  final Iterator<T> descendingIterator = input.descendingIterator();
+  Iterator<T> descendingIterator = input.descendingIterator();
   return StreamSupport.stream(Spliterators.spliteratorUnknownSize(
     descendingIterator, Spliterator.ORDERED), false);
 }

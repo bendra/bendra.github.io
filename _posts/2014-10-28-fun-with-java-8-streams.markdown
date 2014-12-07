@@ -104,7 +104,7 @@ public static class StreamRef<T> {
   * Produces the intermediate results from a "reduce" operation
   */
 public static <T> Stream<T> reductions(Stream<T> input, BinaryOperator<T> accumulator) {
-   final StreamRef<T> accTot = new StreamRef<T>(null);
+   StreamRef<T> accTot = new StreamRef<T>(null);
    return input.map(i -> {
       if (accTot.val == null) {
          accTot.val = i;
@@ -122,6 +122,8 @@ There's a potential objection here: we are relying on side-effects of the map() 
 >If a stream is ordered, most operations are constrained to operate on the elements in their encounter order; if the source of a stream is a List containing [1, 2, 3], then the result of executing map(x -> x***2) must be [2, 4, 6].  
 
 *So I don't think there is a real problem here although one can argue about the code smell of side effects.*
+
+*edit2: you don't have to mark accTot as final; as of Java 8 the compiler will note that the assignment is never changed and, since it is used in a lambda, will make it "effectively final".  Java 8 is cloy with syntactic sugar.*
 
 # Conclusion
 
@@ -151,8 +153,8 @@ public static class BooleanStreamRef {
  * Produces the intermediate results from a "reduce" operation
  */
 public static IntStream reductions(IntStream input, IntBinaryOperator accumulator) {
-   final IntStreamRef accTot = new IntStreamRef(0);
-   final BooleanStreamRef empty = new BooleanStreamRef(true);
+   IntStreamRef accTot = new IntStreamRef(0);
+   BooleanStreamRef empty = new BooleanStreamRef(true);
    return input.map(i -> {
       if (empty.val) {
          accTot.val = i;
