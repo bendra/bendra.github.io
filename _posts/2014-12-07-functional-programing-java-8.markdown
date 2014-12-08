@@ -8,7 +8,7 @@ categories: java lambda stream
 #Functional Programing, JDK 1.7 and before
 Java had essentially no built-in support for functional programing prior to vers(:ion 8.  Several libraries do exist which attempt to provide some degree of support for functional constructs anyway; these include [Functional Java](http://www.functionaljava.org/), [Lambdaj](https://code.google.com/p/lambdaj/), and [guava](https://code.google.com/p/guava-libraries/).
 
-These libraries are noet very satisfactory and I expect they will fall out of favor as adoption of Java 8 picks up.  To illustrate just how unsatisfactory, consider this excerpt from guava's [functional documentation](https://code.google.com/p/guava-libraries/wiki/FunctionalExplained):
+These libraries are not very satisfactory and I expect they will fall out of favor as adoption of Java 8 picks up.  To illustrate just how unsatisfactory, consider this excerpt from guava's [functional documentation](https://code.google.com/p/guava-libraries/wiki/FunctionalExplained):
 
 >Imperative code should be your default, your first choice as of Java 7. You should not use functional idioms unless you are absolutely sure of one of the following:
 
