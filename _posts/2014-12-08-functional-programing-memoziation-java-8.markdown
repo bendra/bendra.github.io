@@ -80,7 +80,7 @@ public static <T> Predicate<T> memoizePred(Predicate<T> pred) {
 }
 {% endhighlight %}
 
-Essentially, what we do is create a private (nested) function which returns a Boolean value, then memoize that function, and return a predicate which delegates to the wrapped predicate. 
+Essentially, what we do is create a private (nested) function which returns a Boolean value, then memoize that function, and return a predicate which delegates to the wrapped function.
 
 Now we can apply a memoized version of a predicate to a filter() function for example, like the guava example in my [last post]({% post_url 2014-12-07-functional-programing-java-8%}):
 
