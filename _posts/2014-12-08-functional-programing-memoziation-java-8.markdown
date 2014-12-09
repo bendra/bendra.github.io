@@ -91,6 +91,7 @@ Arrays.stream(strings)
    .filter(s -> memoizePred(CharMatcher.JAVA_UPPER_CASE.matchesAllOf(s)))
    .forEach(s -> lengths.add(s.length()));
 {% endhighlight %}
+*EDIT: In this case the target function is itself fast and there is no need to memoize- this is just provided for illustration*
 
 Note the new method is "memoizePred" instead of "memoize" because otherwise the compiler complains that the call is ambiguous.  I'm not sure why javac can't infer the type from the singature of the Stream.filter() function (especially considering how much help we usually get with lambda type inferencing), but there you have it.
 
