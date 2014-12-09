@@ -2,7 +2,7 @@
 layout: post
 title:  "Functional Programing in Java 8: Memoization"
 date:   2014-12-08 22:38:15
-categories: java lambda stream
+categories: java lambda functional memoization guava
 comments: true
 ---
 

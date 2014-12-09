@@ -2,7 +2,7 @@
 layout: post
 title:  "Functional Programing in Java 8 vs Java 7"
 date:   2014-12-07 22:35:15
-categories: java lambda stream
+categories: java lambda functional guava
 ---
 
 #Functional Programing, JDK 1.7 and before
