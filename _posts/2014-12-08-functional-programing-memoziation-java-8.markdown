@@ -104,8 +104,8 @@ For a method with two arguments we have a predefined functional interface, java.
 {% highlight java %}
 public static <T, U, R> BiFunction<T, U, R> memoizeBifn(BiFunction<T, U, R> bFn) {
    @SuppressWarnings("unchecked")
-   Function<List<? extends Object>, R> twoArgsListMemoFn = list -> bFn.apply(
-      ((T) list.get(0)), (U) list.get(1));
+   Function<List<? extends Object>, R> twoArgsListMemoFn = memoize(list -> bFn.apply(
+      ((T) list.get(0)), (U) list.get(1)));
    
    return (t, u) -> {
       List<? extends Object> list = Arrays.asList(t, u);
