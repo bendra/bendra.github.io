@@ -43,7 +43,7 @@ In contrast to this approach, most functional languages provide some facility fo
 
 {% highlight lisp %}
 
-(def something-sxpensive-memo
+(def something-expensive-memo
    (memoize something-expensive)) 
 {% endhighlight %}
 
