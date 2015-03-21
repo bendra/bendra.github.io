@@ -50,11 +50,27 @@ $on-laptop:        800px;
 
 
 .site-header {
-	background-color: #BADA55;
+	background-color: #0197D6;
+	font-weight: bold;
+	height: 75px;
+}
+
+.site-title text {
+	color: white;
+}
+
+.site-title span {
+	vertical-align: top;
+}
+
+	
+.site-title img {
+	margin-bottom: 4px;
+	margin-right: 15px
 }
 
 body {
-font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, "MS PGothic", Osaka, Sans-Serif;
+font-family: "Gill Sans", "Gil Sans MT", Frutiger, "Frutiger Linotype", Univers, Calibri, "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, "MS PGothic", Osaka, Sans-Serif;
 font-size: 1em;
 line-height: 1.625em;
 }
