@@ -1,0 +1,14 @@
+<html>
+<script src="http://bdrasin-wsm.internal.salesforce.com:6109/lightning/lightning.out.js"></script>
+<h1>hi, mom</h1>
+<div id="button"/>
+ <script>
+
+    $Lightning.use("ltng:lightningOutTest", function() {
+        $Lightning.createComponent("forceChatter:feed", { 
+            type: "NEWS" 
+        }, "button");
+    }, "http://bdrasin-wsm.internal.salesforce.com:6109");
+    </script>
+</html>
+
