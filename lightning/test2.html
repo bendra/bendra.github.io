@@ -1,0 +1,13 @@
+<html>
+<script src="https://bdrasin-wsm.internal.salesforce.com:6101/lightning/lightning.out.js"></script>
+<h1>hi, mom</h1>
+<div id="button"/>
+ <script>
+
+    $Lightning.use("ltng:lightningOutTest2", function() {
+        $Lightning.createComponent("selfService:helloComponent", {}
+        , "button");
+    }, "https://bdrasin-wsm.internal.salesforce.com:6101");
+    </script>
+</html>
+
