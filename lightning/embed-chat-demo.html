@@ -1,0 +1,18 @@
+<html>
+  <h1>Congratulations</h1>
+  This is your new Page
+
+
+<script src="https://bdrasin-ltm.internal.salesforce.com:7443/lightning/lightning.out.js"></script>
+<h1>hi, mom</h1>
+<div id="button_goes_here"/>
+$Lightning.use("embeddedService:liveAgentSidebarApp", function() {
+        $Lightning.createComponent("embeddedService:liveAgentSidebar", {
+            endpointURL : 'http://localhost:8096/chat/rest/Visitor/Availability',
+            deploymentId : '572xx000000000L',
+            orgId : '00Dxx0000001gLX',
+            buttonId : '573xx000000000L',
+        }, "button_goes_here");
+    }, "https://bdrasin-ltm.internal.salesforce.com:7443", true);
+
+</html>
