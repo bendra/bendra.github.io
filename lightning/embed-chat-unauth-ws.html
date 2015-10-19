@@ -3,9 +3,19 @@
   This is your new Page
 
 
-<script src="https://bdrasin-ltm.internal.salesforce.com:7443/lightning/lightning.out.js"></script>
 <h1>hi, mom</h1>
 <div id="button_goes_here"/>
-<script src="https://bdrasin-ltm.internal.salesforce.com:7443/js/embed-chat-unauth.js"></script>
+<script src="https://bdrasin-wsm.internal.salesforce.com:7443/lightning/lightning.out.js"></script>
+<script>
+  	$Lightning.use("embeddedService:liveAgentSidebarApp", function() {
+        $Lightning.createComponent("embeddedService:liveAgentSidebar", { 
+        	endpointURL: 'http://bdrasin-wsm.internal.salesforce.com:8096/chat/rest', 
+        	categoryGroupName: categoryGroupName, 
+        	deploymentId : '572xx000000000L',
+            orgId : '00Dxx0000001gLX',
+            buttonId : '573xx000000000L'
+        }, button_goes_here);
+    }, "https://bdrasin-wsm.localhost.force.com:7443/t1c1/s/sfsites");
+</script>
 
 </html>
