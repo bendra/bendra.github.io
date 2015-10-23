@@ -4,10 +4,12 @@
 <div id="button"/>
  <script>
 
-    $Lightning.use("selfService:helloAgain", function() {
-        $Lightning.createComponent("selfService:helloComponent", {
-        }, "button");
-    }, "https://bdrasin-wsm.internal.salesforce.com:7443/t1c1");
+<div id =”hello”/>
+ <script>
+    $Lightning.use("embeddedService:helloLightningOut", function() {
+        $Lightning.createComponent("embeddedService:helloComponent", {
+        }, "hello");
+    }, "https://bdrasin-wsm.internal.salesforce.com:7443");
     </script>
 </html>
 
