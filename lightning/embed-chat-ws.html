@@ -3,14 +3,17 @@
 
 
 <script src="https://bdrasin-wsm.internal.salesforce.com:7443/lightning/lightning.out.js"></script>
-<div id="button_goes_here" style="position:absolute; right: 0; bottom: 0"/>
+<div id="button_goes_here"/>
 <script>
 $Lightning.use("embeddedService:liveAgentSidebarApp", function() {
-        $Lightning.createComponent("embeddedService:liveAgentSidebar", {
-            endpointURL : 'http://localhost:8096/chat/rest',
+    $Lightning.createComponent("embeddedService:liveAgentSidebar", {
+            endpointURL : 'http://localhost:8096/chat',
             deploymentId : '572xx0000000001',
             orgId : '00Dxx0000001gHB',
             buttonId : '573xx0000000001',
+            chasitorEndpointUrl: 'http://localhost:8096/chat',
+            chasitorContentServerEndpointUrl : 'http://localhost:8095/content',
+            chasitorSrcUrl : ['resource/SfdcCore','http://localhost:8095/content/g/js/36.0/chasitor.js']
         }, "button_goes_here");
     }, "https://bdrasin-wsm.localhost.force.com:7443/t1c1");
 </script>
