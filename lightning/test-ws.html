@@ -1,12 +1,13 @@
 <html>
-<script src="https://bdrasin-ltm.internal.salesforce.com:7443/lightning/lightning.out.js"></script>
+<script src="https://bdrasin-wsm.internal.salesforce.com:6101/lightning/lightning.out.js"></script>
 <h1>hi, mom</h1>
-<div id =”hello”/>
- <script>
-    $Lightning.use("embeddedService:helloLightningOut", function() {
-        $Lightning.createComponent("embeddedService:helloComponent", {
-        }, "hello");
-    }, "https://bdrasin-ltm.internal.salesforce.com:7443");
+<div id =”feed”/>
+    <script>
+    $Lightning.use("c:loTest", function() {
+        $Lightning.createComponent("forceChatter:feed", { 
+            type: "NEWS" 
+        }, "feed");
+    },"https://bdrasin-wsm.internal.salesforce.com:6101");
     </script>
 </html>
 
