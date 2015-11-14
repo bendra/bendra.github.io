@@ -7,12 +7,12 @@
 <script>
 $Lightning.use("embeddedService:liveAgentSidebarApp", function() {
     $Lightning.createComponent("embeddedService:liveAgentSidebar", {
-            endpointURL : 'http://localhost:8096/chat',
+            endpointURL : 'https://bdrasin-wsm.internal.salesforce.com:8096/chat',
             deploymentId : '572xx0000000001',
             orgId : '00Dxx0000001gHB',
             buttonId : '573xx0000000001',
-            chasitorEndpointUrl: 'http://localhost:8096/chat',
-            chasitorContentServerEndpointUrl : 'http://localhost:8095/content',
+            chasitorEndpointUrl: 'https://bdrasin-wsm.internal.salesforce.com:8096/chat',
+            chasitorContentServerEndpointUrl : 'https://bdrasin-wsm.internal.salesforce.com:8095/content',
             chasitorSrcUrl : ['http://bdrasin-wsm.internal.salesforce.com:6109/jslibrary/1446053165000/ui-sfdc-javascript/debug/SfdcCore.js','http://localhost:8095/content/g/js/36.0/chasitor.js']
         }, "button_goes_here");
     }, "https://bdrasin-wsm.localhost.force.com:6101/t1c1");
