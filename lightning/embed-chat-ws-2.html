@@ -1,0 +1,22 @@
+<html>
+  <h1>Congratulations - This is the demo page!</h1>
+
+
+<script src="https://bdrasin-wsm.internal.salesforce.com:6101/lightning/lightning.out.js"></script>
+<div id="button_goes_here"/>
+<script>
+$Lightning.use("embeddedService:liveAgentSidebarApp", function() {
+    $Lightning.createComponent("embeddedService:liveAgentSidebar", {
+            endpointURL : 'http://bdrasin-wsm.internal.salesforce.com:8096/chat',
+            deploymentId : '572xx0000000001',
+            orgId : '00Dxx0000001gHB',
+            buttonId : '573xx0000000001',
+            avatarImgURL : 'http://bdrasin-wsm.internal.salesforce.com:6109/img/icon/t4/standard/avatar_60.png',
+            prechatBackgroundImgURL : 'http://bdrasin-wsm.internal.salesforce.com:6109/img/milkmilklemonade-img.gif',
+            chasitorContentServerEndpointURL : 'http://bdrasin-wsm.internal.salesforce.com:8095/content',
+            chasitorSrcURL : ['http://bdrasin-wsm.internal.salesforce.com:6109/jslibrary/1446053165000/ui-sfdc-javascript/debug/SfdcCore.js','http://bdrasin-wsm:8095/content/g/js/36.0/chasitor.js'],
+            appState : 2
+        }, "button_goes_here");
+    }, "https://bdrasin-wsm.localhost.force.com:6101/t1c1");
+</script>
+</html>
