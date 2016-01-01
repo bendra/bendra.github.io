@@ -85,7 +85,7 @@ Note that for step 2 we must reverse the list, generate reductions, and then rev
 Imperitive vs functional programing is a broad topic, but in this case the functional approach looks superior - less boilerplate, just pure logic.  And its easy to follow.  
 
 #Adding zip function
-In implementing this algorithm in Java, we can make use of both of the functions defined in earlier posts; reductions to generate the intermediate results as well as streamInReverse.  In addition we need a means of joining two streams to produce a new one.  In b93 there was a function java.util.stream.Streams.zip which could do this but has been removed (in fact java.util.stream.Streams is now non-public and final).  Many libraries do include this; here is mine from org.bendra.util.StreamUtil:
+In implementing this algorithm in Java, we can make use of both of the functions defined in earlier posts; reductions to generate the intermediate results as well as streamInReverse.  In addition we need a means of joining two streams to produce a new one.  In the Early Access b93 JDK there was a function java.util.stream.Streams.zip which could do this but has been removed (in fact java.util.stream.Streams is now non-public and final - thanks Oracle).  Many libraries do include this function though; here is mine from org.bendra.util.StreamUtil:
 
 {% highlight java %}
 /**
