@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Functional Programing and Method Chaining in Java 8"
-date:   2015-12-26 22:38:15
+date:   2015-12-31 22:38:15
 categories: java lambda functional collector
 comments: true
 ---
