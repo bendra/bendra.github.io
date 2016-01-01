@@ -605,7 +605,7 @@ Or, using reference types instead of primitives:
  * @param input
  * @return
  */
-public static Integer[] functionalChainedSolution3(Integer[] input) {
+public static Integer[] functionalChainedSolution(Integer[] input) {
 
   return stream(input)
       .map(reductionsMapper((i, j) -> i * j, 1))
