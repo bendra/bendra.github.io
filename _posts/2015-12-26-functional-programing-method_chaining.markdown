@@ -587,10 +587,10 @@ public static int[] functionalChainedSolution(int[] input) {
       .map(intReductionsMapper((i, j) -> i * j, 1))
       .map(intZipMapper( (i, j) -> i * j, 0,
           streamInReverse(input)
-              .map(intReductionsMapper((i, j) -> i * j, 1))
-              .collect(IntStreamReverse.supplier(),
-                  IntStreamReverse.accumulator(),
-                  IntStreamReverse.combiner()).build()))
+          .map(intReductionsMapper((i, j) -> i * j, 1))
+          .collect(IntStreamReverse.supplier(),
+            IntStreamReverse.accumulator(),
+            IntStreamReverse.combiner()).build()))
       .toArray();
 }
 
@@ -611,8 +611,8 @@ public static Integer[] functionalChainedSolution(Integer[] input) {
       .map(reductionsMapper((i, j) -> i * j, 1))
       .map(zipMapper((i, j) -> i * j, 0,
           streamInReverse(input)
-              .map(reductionsMapper((i, j) -> i * j, 1))
-              .collect(StreamReverse.collector()).build()))
+          .map(reductionsMapper((i, j) -> i * j, 1))
+          .collect(StreamReverse.collector()).build()))
       .toArray(Integer[]::new);
 }
 {% endhighlight %}
