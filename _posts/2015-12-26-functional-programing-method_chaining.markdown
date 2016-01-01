@@ -88,6 +88,22 @@ Imperitive vs functional programing is a broad topic, but in this case the funct
 In implementing this algorithm in Java, we can make use of both of the functions defined in earlier posts; reductions to generate the intermediate results as well as streamInReverse.  In addition we need a means of joining two streams to produce a new one.  In the Early Access b93 JDK there was a function java.util.stream.Streams.zip which could do this but has been removed (in fact java.util.stream.Streams is now non-public and final - thanks Oracle).  Many libraries do include this function though; here is mine from org.bendra.util.StreamUtil:
 
 {% highlight java %}
+
+/**
+ * Combine two IntStreams using a zipper function. Will run until one of the
+ * input streams is exhausted.
+ * 
+ * @param stream1
+ * @param stream2
+ * @param zipper
+ * 
+ * @return IntStream
+ */
+public static IntStream zip(IntBinaryOperator zipper, IntStream stream1,
+    IntStream stream2) {
+  return zip(zipper, false, 0, 0, stream1, stream2);
+}
+
 /**
  * Combine two IntStreams using a zipper function. If exhaustAll is false,
  * will run until one stream is exhausted; if true will run until both input
