@@ -274,7 +274,7 @@ public static int[] functionalSolution(int[] input){
 My wishlist will never happen.  Java does not have any facility to add methods to existing classes, and Oracle has an awful habit of making its implementation classes final and/or private so we can't even pretend.  However the Stream interfaces (including IntStream et. al.) do have some functions that offer a method signature similar to what we want, and since they accept a functional interface as an argument they allow us considerable control over processing.  We can use these to approximate what we want.
 
 #Reducing through map()
-The Stream.map() function returns a stream of equal size to the input, with a function applied to each element encountered.  In an earlier article, we used a map function with some internal state to write a static reductions() function .  This suggests there could be an alternative approach for our purposes:  re-imagen the reductions() function not as a Static method, but as normal map operation with a stateful mapper function, e.g.:
+The Stream.map() function returns a stream of equal size to the input, with a function applied to each element encountered.  In an earlier article, we used a map function with some internal state to write a static reductions() function .  This suggests there could be an alternative approach for our purposes:  re-imagen the reductions() function not as a Static method, but as normal map operation with a recursively reducing mapper function, e.g.:
 {% highlight java %}
 int[] input = new int[]{3, 5, 2};
 int[] reductions = 
