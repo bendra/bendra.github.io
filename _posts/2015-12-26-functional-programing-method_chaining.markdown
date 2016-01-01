@@ -7,7 +7,7 @@ comments: true
 ---
 
 #Introduction
-In some [earlier]({% post_url 2014-10-28-fun-with-java-8-streams %}) [articles]({% post_url 2014-11-1-fun-with-java-8-streams-ii %}) I looked at ways to provide additional functions for maniplulating Java 8 Streams, specifically replicating a Lisp reductions (producing the intermediate results from a reduce operation) function and creating a Stream from an array/list in reverse order.  In this article we write some more functions and look at how they can be used in an advanced algorithm, attempting to address some of the shortcomings we encounter.
+In some [earlier]({% post_url 2014-10-28-fun-with-java-8-streams %}) [articles]({% post_url 2014-11-1-fun-with-java-8-streams-ii %}) I looked at ways to provide additional functions for maniplulating Java 8 Streams, specifically replicating a Lisp reductions function (producing the intermediate results from a reduce operation) and creating a Stream from an array/list in reverse order.  We did this through writing the StreamUtil.streamInReverse() and StreamUtil.reductions() staticmethods. In this article we write some more functions and look at how they can be used in an advanced algorithm, attempting to address some of the shortcomings we encounter.
 
 #Problem Statement
 This is a brain teaser algorithm, which I like because it requres some non-standard idioms to solve.  The problem is to write a method which takes an array of positive integers as its input (specifically no zeros), and return an array of the same length, where each index of the return array equals the product of all the elements in the input array except the corresponding one.
