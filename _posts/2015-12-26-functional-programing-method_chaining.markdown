@@ -603,4 +603,4 @@ public static Integer[] functionalChainedSolution3(Integer[] input) {
 
 
 #Conclusions
-Method chaining can combine with functional programing to produce solutions to advanced algorithms which in many cases are more elegant than imperative solitions. But the base Java classes only provide a limited number of methods and going beyind their targeted use cases require, shall we say, creative use of functional interfaces. 
+Method chaining can combined with functional programing can be very elegant.  In many cases together they can produce cleaner solutions to advanced algorithms than imperative programing. But the base Java classes only provide a limited number of methods and going beyind their targeted use cases require, shall we say, creative use of functional interfaces. 
