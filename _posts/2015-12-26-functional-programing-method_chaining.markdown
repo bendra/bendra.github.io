@@ -164,11 +164,13 @@ IntStream stream2) {
     }
   };
   // Our output stream will be the size of the larger of the two input
-  // streams
-  long outputSize =
-    ((characteristics & Spliterator.SIZED) != 0) ? Math.max(
-      spliterator1.getExactSizeIfKnown(),
-      spliterator2.getExactSizeIfKnown()) : -1;
+  // streams if exhaustall is true, otherwise the smaller; -1 if unknown
+  long outputSize = -1;
+  if((characteristics  & Spliterator.SIZED) != 0 ){
+    long size1 = spliterator1.getExactSizeIfKnown();
+    long size2 = spliterator2.getExactSizeIfKnown();
+    outputSize = exhaustAll ? Math.max(size1, size2) : Math.min(size1, size2);
+  }
 
   Spliterator.OfInt outputSpliterator =
     Spliterators.spliterator(outputIterator, outputSize,
@@ -267,7 +269,7 @@ public static int[] functionalSolution(int[] input){
         .reductions((i, j) -> i * j, 1)
         .reverse()
     .toArray();
-}	 
+} 
 {% endhighlight %}
 
 #Functional Java solution - how close can we come?
