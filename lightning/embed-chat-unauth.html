@@ -2,20 +2,20 @@
   <h1>Congratulations - This is the demo page!</h1>
 
 
-<script src="https://localhost:6101/lightning/lightning.out.js"></script>
+<script src="http://localhost:6109/lightning/lightning.out.js"></script>
 <div id="button_goes_here"/>
 <script>
 $Lightning.use("embeddedService:liveAgentSidebarApp", function() {
     $Lightning.createComponent("embeddedService:liveAgentSidebar", {
-            endpointURL : 'https://localhost:8844/chat',
+            endpointURL : 'http://localhost:8096/chat',
             deploymentId : '572xx0000000001',
             orgId : '00Dxx0000001gEg',
             buttonId : '573xx0000000001',
-            avatarImgURL : 'https://bdrasin-ltm.internal.salesforce.com:6101/img/icon/t4/standard/avatar_60.png',
-            prechatBackgroundImgURL : 'https://bdrasin-ltm.internal.salesforce.com:6101/img/milkmilklemonade-img.gif',
-            chasitorContentServerEndpointURL : 'https://localhost:8843/content',
-            chasitorSrcURL : ['https://localhost:6101/jslibrary/1446053165000/ui-sfdc-javascript/debug/SfdcCore.js','https://localhost:8843/content/g/js/36.0/chasitor.js']
+            avatarImgURL : 'http://bdrasin-ltm.internal.salesforce.com:6109/img/icon/t4/standard/avatar_60.png',
+            prechatBackgroundImgURL : 'http://bdrasin-ltm.internal.salesforce.com:6109/img/milkmilklemonade-img.gif',
+            chasitorContentServerEndpointURL : 'http://localhost:8095/content',
+            chasitorSrcURL : ['http://localhost:6109/jslibrary/1446053165000/ui-sfdc-javascript/debug/SfdcCore.js','http://localhost:8095/content/g/js/36.0/chasitor.js']
         }, "button_goes_here");
-    }, "https://bdrasin-ltm-comm.localhost.force.com:6101/t3c1");
+    }, "http://bdrasin-ltm-comm.localhost.force.com:6109/t3c1");
 </script>
 </html>
