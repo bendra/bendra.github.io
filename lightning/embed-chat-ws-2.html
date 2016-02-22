@@ -1,22 +1,32 @@
 <html>
-  <h1>Congratulations - This is the demo page!</h1>
-
+   <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+</head>
 
 <script src="https://bdrasin-wsm.internal.salesforce.com:6101/lightning/lightning.out.js"></script>
 <div id="button_goes_here"/>
 <script>
 $Lightning.use("embeddedService:liveAgentSidebarApp", function() {
     $Lightning.createComponent("embeddedService:liveAgentSidebar", {
-            endpointURL : 'https://bdrasin-wsm.internal.salesforce.com:8844/chat',
             deploymentId : '572xx0000000001',
             orgId : '00Dxx0000001gHB',
             buttonId : '573xx0000000001',
-            avatarImgURL : 'https://bdrasin-wsm.internal.salesforce.com:6101/img/icon/t4/standard/avatar_60.png',
-            prechatBackgroundImgURL : 'https://bdrasin-wsm.internal.salesforce.com:6101/img/milkmilklemonade-img.gif',
+            endpointURL : 'https://bdrasin-wsm.internal.salesforce.com:8844/chat',
             chasitorContentServerEndpointURL : 'http://bdrasin-wsm.internal.salesforce.com:8843/content',
             chasitorSrcURL : ['https://bdrasin-wsm.internal.salesforce.com:6101/jslibrary/1446053165000/ui-sfdc-javascript/debug/SfdcCore.js','https://bdrasin-wsm:8843/content/g/js/36.0/chasitor.js'],
-            appState : 2
+            prechatBackgroundImgURL : 'https://bdrasin-wsm.internal.salesforce.com:6101/img/milkmilklemonade-img.gif',
+            avatarImgURL : 'https://bdrasin-wsm.internal.salesforce.com:6101/img/icon/t4/standard/avatar_60.png',
+            prechatBackgroundImgURL : 'https://bdrasin-wsm.internal.salesforce.com:6101/img/milkmilklemonade-img.gif',
         }, "button_goes_here");
     }, "https://bdrasin-wsm.localhost.force.com:6101/t1c1");
 </script>
 </html>
+    <style>
+      #button_goes_here{
+            width: 100%; 
+            height: 100%; 
+            margin: 0 auto;
+            background: url("https://esw1234.github.io/Spotify-large.png") no-repeat;
+            position: relative;
+      }
+    </style>
