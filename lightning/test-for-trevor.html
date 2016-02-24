@@ -1,0 +1,33 @@
+<html>
+   <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+</head>
+
+
+<script src="https://bdrasin-ltm2.internal.salesforce.com:6101/lightning/lightning.out.js"></script>
+<div id="button_goes_here"/>
+<script>
+$Lightning.use("embeddedService:liveAgentSidebarApp", function() {
+    $Lightning.createComponent("embeddedService:liveAgentSidebar", {
+            endpointURL : 'http://bdrasin-ltm2.internal.salesforce.com:8096/chat',
+            deploymentId : '572xx0000000001',
+            orgId : '00Dxx0000001gEg',
+            buttonId : '573xx0000000001',
+            avatarImgURL : 'http://bdrasin-ltm2.internal.salesforce.com:6109/img/icon/t4/standard/avatar_60.png',
+            prechatBackgroundImgURL : 'http://bdrasin-ltm2.internal.salesforce.com:6109/img/milkmilklemonade-img.gif',
+            chasitorContentServerEndpointURL : 'https://bdrasin-ltm2.internal.salesforce.com:8095/content',
+            chasitorSrcURL : ['https://bdrasin-ltm2.internal.salesforce.com:6101/jslibrary/1446053165000/ui-sfdc-javascript/debug/SfdcCore.js','http://localhost:8095/content/g/js/36.0/chasitor.js']
+        }, "button_goes_here");
+    }, "https://nwk00dxx0000001j2n.localhost.force.com:7443/napili");
+</script>
+</html>
+    <style>
+      #button_goes_here{
+            width: 100%; 
+            height: 100%; 
+            margin: 0 auto;
+            background: url("https://esw1234.github.io/Spotify-large.png") no-repeat;
+            position: relative;
+      }
+    </style>
+
