@@ -1,0 +1,13 @@
+<html>
+<h1>tweet button example</h1>
+<a class="twitter-share-button"
+  href="https://twitter.com/share"
+  data-size="large"
+  data-url="https://dev.twitter.com/web/tweet-button"
+  data-via="twitterdev"
+  data-related="twitterapi,twitter"
+  data-hashtags="example,demo"
+  data-text="custom share text">
+Tweet
+</a>
+</html>
