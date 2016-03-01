@@ -13,7 +13,8 @@
                     <button id="liveAgentHelpButton" class="flatButton uiButton--default uiButton" type="button" disabled="" data-aura-rendered-by="28:4;a">
                         <!--render facet: 29:4;a--><span class="assistiveText" data-aura-rendered-by="31:4;a">Agent Offline</span><span class="icon-fallback-text help embeddedServiceIcon" aria-hidden="true" data-icon="" data-key="comment" data-aura-rendered-by="16:4;a"><span class="icon icon-key" data-aura-rendered-by="17:4;a"></span></span><span class="newAssistiveText embeddedServiceIcon" data-aura-rendered-by="18:4;a"></span>
                         <label class="helpButtonLabel uiLabel" for="12:4;a" data-aura-rendered-by="22:4;a">
-                            <span class="" data-aura-rendered-by="23:4;a">Agent Offline</span><!--render facet: 25:4;a--><!--render facet: 26:4;a-->
+                            <span id="liveagent_button_offline_573xx0000000001" class="" data-aura-rendered-by="23:4;a">Agent Offline</span><!--render facet: 25:4;a--><!--render facet: 26:4;a-->
+                            <span id="liveagent_button_online_573xx0000000001" class="" data-aura-rendered-by="23:4;a">Chat with an Expert</span><!--render facet: 25:4;a--><!--render facet: 26:4;a-->
                         </label>
                     </button>
                 </div>
@@ -22,6 +23,19 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+if (!window._laq) { window._laq = []; }
+window._laq.push(
+   function(){
+      liveagent.showWhenOnline('573xx0000000001', document.getElementById('liveagent_button_online_573xx0000000001'));
+      liveagent.showWhenOffline('573xx0000000001', document.getElementById('liveagent_button_offline_573xx0000000001'));
+});</script>
+
+<script type='text/javascript' src='http://bdrasin-wsm.internal.salesforce.com:8095/content/g/js/36.0/deployment.js'></script>
+<script type='text/javascript'>
+   liveagent.init('http://bdrasin-wsm.internal.salesforce.com:8096/chat', '572xx0000000001', '00Dxx0000001gHB');
+</script>
 
 <script type="text/javascript">
 
