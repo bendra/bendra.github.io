@@ -25,12 +25,12 @@
 
 <script type="text/javascript">
 
-var el = document.getElementById("liveAgentHelpButton");
 debugger;
+var el = document.getElementById("liveAgentHelpButton");
 if (el.addEventListener) {
   el.addEventListener("click", loadLightningOut, false);
 } else {
-  el.attachEvent('onclick', yourFunction);
+  el.attachEvent('onclick', loadLightningOut);
 }  
 
 var loadLightningOut = function(){
