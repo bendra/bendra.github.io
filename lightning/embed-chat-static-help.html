@@ -25,14 +25,6 @@
 
 <script type="text/javascript">
 
-debugger;
-var el = document.getElementById("liveAgentHelpButton");
-if (el.addEventListener) {
-  el.addEventListener("click", loadLightningOut, false);
-} else {
-  el.attachEvent('onclick', loadLightningOut);
-}  
-
 var loadLightningOut = function(){
    var scriptEl = document.createElement("script");
    scriptEl.type = "text/javascript";
@@ -54,8 +46,12 @@ var doLightningOut = function() {
    alert('hi, mom');
 }
 
-var foo = function() {
-   alert('derp');
+debugger;
+var el = document.getElementById("liveAgentHelpButton");
+if (el.addEventListener) {
+  el.addEventListener("click", loadLightningOut, false);
+} else {
+  el.attachEvent('onclick', loadLightningOut);
 }
 </script>
 
