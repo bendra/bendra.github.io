@@ -4,7 +4,6 @@
 </head>
 
 
-<script src="https://bdrasin-wsm.internal.salesforce.com:6101/lightning/lightning.out.js"></script>
 <div id="button_goes_here">
     <div class="minimized modalContainer embeddedServiceLiveAgentSidebar" data-aura-rendered-by="4:4;a">
         <div class="minimized dockableContainer" data-aura-rendered-by="6:4;a">
@@ -37,9 +36,9 @@ window._laq.push(
       liveagent.showWhenOffline('573xx0000000001', document.getElementById('liveagent_button_offline_573xx0000000001'));
 });</script>
 
-<script type='text/javascript' src='http://bdrasin-wsm.internal.salesforce.com:8095/content/g/js/36.0/deployment.js'></script>
+<script type='text/javascript' src='http://bdrasin-ltm2.internal.salesforce.com:8095/content/g/js/36.0/deployment.js'></script>
 <script type='text/javascript'>
-   liveagent.init('http://bdrasin-wsm.internal.salesforce.com:8096/chat', '572xx0000000001', '00Dxx0000001gHB');
+   liveagent.init('http://bdrasin-ltm2.internal.salesforce.com:8096/chat', '572xx0000000001', '00Dxx0000001gHB');
 </script>
 
 <script type="text/javascript">
@@ -59,7 +58,7 @@ var loadLightningOut = function(){
          doLightningOut();
       }
    }
-   scriptEl.src = 'https://bdrasin-wsm.internal.salesforce.com:6101/lightning/lightning.out.js';
+   scriptEl.src = 'https://bdrasin-ltm2.internal.salesforce.com:6101/lightning/lightning.out.js';
    document.getElementsByTagName("head")[0].appendChild(scriptEl);
 }
 
@@ -67,17 +66,17 @@ var doLightningOut = function() {
 $Lightning.use("embeddedService:liveAgentSidebarApp", function() {
     $Lightning.createComponent("embeddedService:liveAgentSidebar", {
             deploymentId : '572xx0000000001',
-            orgId : '00Dxx0000001gHB',
+            orgId : '00Dxx0000001gEg',
             buttonId : '573xx0000000001',
             appState : 'PRECHAT',
-            endpointURL : 'https://bdrasin-wsm.internal.salesforce.com:8844/chat',
-            chasitorContentServerEndpointURL : 'https://bdrasin-wsm.internal.salesforce.com:8843/content',
-            chasitorSrcURL : ['https://bdrasin-wsm.internal.salesforce.com:6101/jslibrary/1446053165000/ui-sfdc-javascript/debug/SfdcCore.js','https://bdrasin-wsm:8843/content/g/js/36.0/chasitor.js'],
-            prechatBackgroundImgURL : 'https://bdrasin-wsm.internal.salesforce.com:6101/img/milkmilklemonade-img.gif',
-            avatarImgURL : 'https://bdrasin-wsm.internal.salesforce.com:6101/img/icon/t4/standard/avatar_60.png',
+            endpointURL : 'https://bdrasin-ltm2.internal.salesforce.com:8844/chat',
+            chasitorContentServerEndpointURL : 'https://bdrasin-ltm2.internal.salesforce.com:8843/content',
+            chasitorSrcURL : ['https://bdrasin-ltm2.internal.salesforce.com:6101/jslibrary/1446053165000/ui-sfdc-javascript/debug/SfdcCore.js','https://bdrasin-wsm:8843/content/g/js/36.0/chasitor.js'],
+            prechatBackgroundImgURL : 'https://bdrasin-ltm2.internal.salesforce.com:6101/img/milkmilklemonade-img.gif',
+            avatarImgURL : 'https://bdrasin-ltm2.internal.salesforce.com:6101/img/icon/t4/standard/avatar_60.png',
             waitingStateBackgroundImgURL : 'https://esw1234.github.io/waitingStateImage.png'
         }, "button_goes_here");
-    }, "https://bdrasin-wsm.localhost.force.com:6101/t1c1");
+    }, "https://bdrasin-ltm-comm.localhost.force.com:6101/t1c1");
 }
 
 </script>
