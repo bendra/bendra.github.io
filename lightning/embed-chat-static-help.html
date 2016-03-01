@@ -41,7 +41,7 @@ var loadLightningOut = function(){
       }
    }
    scriptEl.src = 'https://bdrasin-wsm.internal.salesforce.com:6101/lightning/lightning.out.js';
-   document.getElementByTagName("head")[0].appendChild(s);
+   document.getElementsByTagName("head")[0].appendChild(scriptEl);
 }
 
 var doLightningOut = function() {
