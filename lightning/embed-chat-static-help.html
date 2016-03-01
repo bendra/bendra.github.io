@@ -10,11 +10,16 @@
         <div class="minimized dockableContainer" data-aura-rendered-by="6:4;a">
             <span class="page" data-aura-rendered-by="8:4;a">
                 <div class="helpWrapper embeddedServiceLiveAgentHelpButton" data-aura-rendered-by="11:4;a">
-                    <button id="liveAgentHelpButton" class="flatButton uiButton--default uiButton" type="button" disabled="" data-aura-rendered-by="28:4;a">
+                    <button id="liveagent_button_offline_573xx0000000001" class="flatButton uiButton--default uiButton" type="button" disabled="" data-aura-rendered-by="28:4;a">
                         <!--render facet: 29:4;a--><span class="assistiveText" data-aura-rendered-by="31:4;a">Agent Offline</span><span class="icon-fallback-text help embeddedServiceIcon" aria-hidden="true" data-icon="" data-key="comment" data-aura-rendered-by="16:4;a"><span class="icon icon-key" data-aura-rendered-by="17:4;a"></span></span><span class="newAssistiveText embeddedServiceIcon" data-aura-rendered-by="18:4;a"></span>
                         <label class="helpButtonLabel uiLabel" for="12:4;a" data-aura-rendered-by="22:4;a">
-                            <span id="liveagent_button_offline_573xx0000000001" class="" data-aura-rendered-by="23:4;a">Agent Offline</span><!--render facet: 25:4;a--><!--render facet: 26:4;a-->
-                            <span id="liveagent_button_online_573xx0000000001" class="" data-aura-rendered-by="23:4;a">Chat with an Expert</span><!--render facet: 25:4;a--><!--render facet: 26:4;a-->
+                            <span class="" data-aura-rendered-by="23:4;a">Agent Offline</span><!--render facet: 25:4;a--><!--render facet: 26:4;a-->
+                        </label>
+                    </button>
+                    <button id="liveagent_button_online_573xx0000000001"  class="flatButton uiButton--default uiButton" type="button" disabled="" data-aura-rendered-by="28:4;a">
+                        <!--render facet: 29:4;a--><span class="assistiveText" data-aura-rendered-by="31:4;a">Agent Offline</span><span class="icon-fallback-text help embeddedServiceIcon" aria-hidden="true" data-icon="" data-key="comment" data-aura-rendered-by="16:4;a"><span class="icon icon-key" data-aura-rendered-by="17:4;a"></span></span><span class="newAssistiveText embeddedServiceIcon" data-aura-rendered-by="18:4;a"></span>
+                        <label class="helpButtonLabel uiLabel" for="12:4;a" data-aura-rendered-by="22:4;a">
+                            <span class="" data-aura-rendered-by="23:4;a">Chat with an Expert</span><!--render facet: 25:4;a--><!--render facet: 26:4;a-->
                         </label>
                     </button>
                 </div>
@@ -75,13 +80,6 @@ $Lightning.use("embeddedService:liveAgentSidebarApp", function() {
     }, "https://bdrasin-wsm.localhost.force.com:6101/t1c1");
 }
 
-debugger;
-var el = document.getElementById("liveAgentHelpButton");
-if (el.addEventListener) {
-  el.addEventListener("click", loadLightningOut, false);
-} else {
-  el.attachEvent('onclick', loadLightningOut);
-}
 </script>
 
 </html>
