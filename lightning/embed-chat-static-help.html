@@ -26,8 +26,9 @@
 <script type="text/javascript">
 
 var el = document.getElementById("liveAgentHelpButton");
+debugger;
 if (el.addEventListener) {
-  el.addEventListener("click", doLightningOut(), false);
+  el.addEventListener("click", loadLightningOut, false);
 } else {
   el.attachEvent('onclick', yourFunction);
 }  
