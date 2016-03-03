@@ -63,6 +63,8 @@ var loadLightningOut = function(){
 }
 
 var doLightningOut = function() {
+   //this is just to deal with namespace issues
+   window.liveagent = undefiled;
 $Lightning.use("embeddedService:liveAgentSidebarApp", function() {
     $Lightning.createComponent("embeddedService:liveAgentSidebar", {
             deploymentId : '572xx0000000001',
