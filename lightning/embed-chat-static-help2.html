@@ -93,10 +93,6 @@ $Lightning.use("embeddedService:liveAgentSidebarApp", function() {
             position: relative;
       }
       
-.embeddedServiceIcon {display:inline-block}
-.embeddedServiceIcon:before {font-family:'embeddedserviceiconfont'; content:attr(data-icon); speak:none; text-rendering:auto; font-weight:normal; font-variant:normal; text-transform:none; line-height:1; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale}
-.embeddedServiceIcon .icon-fallback-text .icon {display:none}
-.embeddedServiceIcon.newAssistiveText {position:absolute; border:0; clip:rect(1px, 1px, 1px, 1px); width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; z-index:-1000; font-size:1px}
 .uiButton {display:inline-block; cursor:pointer}
 .uiButton .label {display:block}
 .uiButton--default {font-weight:bold; font-size:.9em; margin:2px 3px; padding:4px 6px; text-decoration:none; text-align:center; border-radius:4px; border:0; border-top:1px solid rgba(255,255,255,.45); background:#dddfe1; background:-webkit-linear-gradient(#F8F8F9,#DDDFE1); background:linear-gradient(#F8F8F9,#DDDFE1); box-shadow:0 1px 3px rgba(0, 0, 0, 0.7),0 1px 0 rgba(0, 0, 0, 0.3); text-shadow:0 1px 1px #fff}
@@ -106,7 +102,7 @@ $Lightning.use("embeddedService:liveAgentSidebarApp", function() {
 .uiButton--default:disabled {cursor:default; background:#b9b9b9; box-shadow:none; text-shadow:none}
 .uiButton--default:disabled .label {color:#888}
 .uiButton--default:disabled .label:hover {color:#888}
-.uiImage.empty {background-image:url(/t1c1/auraFW/resources/aura/s.gif)}
+
 .embeddedServiceLiveAgentHelpButton {text-align:right; position:fixed; bottom:11px; right:20px; height:50px}
 .embeddedServiceLiveAgentHelpButton .flatButton {padding:0 10px; margin:0; box-shadow:none; background:#000; font-size:1rem; color:#fff; font-weight:normal; color:#fff; border-radius:8px; text-shadow:none; line-height:50px; font-family:inherit}
 .embeddedServiceLiveAgentHelpButton .flatButton:hover {background:#22bf54}
@@ -116,5 +112,54 @@ $Lightning.use("embeddedService:liveAgentSidebarApp", function() {
 @media only screen and (min-width: 48em) {
   .embeddedServiceLiveAgentHelpButton {position:fixed; bottom:0}
   .embeddedServiceLiveAgentHelpButton .flatButton {border-radius:8px 8px 0 0}
+}
+
+.embeddedServiceLiveAgentSidebar.modalContainer {display:block; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(51, 51, 51, 0.48); overflow:visible; z-index:999; font-family:sans-serif}
+.embeddedServiceLiveAgentSidebar.modalContainer .minimized {background:transparent; box-shadow:none}
+.embeddedServiceLiveAgentSidebar .dockableContainer.minimized {height:96%}
+.embeddedServiceLiveAgentSidebar .dockableContainer {position:fixed; width:90%; height:96%; margin:5% 5% 0 5%; left:0; right:0; background:#fff; box-shadow:0 0 20px rgba(0, 0, 0, 0.2); border-radius:8px; z-index:15; text-align:center; overflow-y:auto}
+.embeddedServiceLiveAgentSidebar .minimizedContainer {position:fixed; left:auto; bottom:0; right:26px; margin:0; height:50px; max-height:100%; border-radius:8px 8px 0 0; background-color:#000; text-align:center; padding:0 10px}
+.embeddedServiceLiveAgentSidebar .newMessage {background:#22bf54}
+.embeddedServiceLiveAgentSidebar .minimizedContainer .minimizedText, .embeddedServiceLiveAgentSidebar .minimizedContainer .minimizedImage, .embeddedServiceLiveAgentSidebar .minimizedContainer .miniLoadingBallContainer, .embeddedServiceLiveAgentSidebar .minimizedContainer .prechatMinimizedText {display:inline-block}
+.embeddedServiceLiveAgentSidebar .minimizedContainer .miniLoadingBallContainer {vertical-align:top; margin-top:17px}
+.embeddedServiceLiveAgentSidebar .minimizedContainer .minimizedText, .embeddedServiceLiveAgentSidebar .minimizedContainer .prechatMinimizedText {font-size:1rem; margin-top:19px; color:#fff; vertical-align:top}
+.embeddedServiceLiveAgentSidebar .minimizedContainer .minimizedImage {height:25px; width:25px; background-repeat:no-repeat; background-position:center; background-size:cover; margin-right:10px; margin-top:15px}
+.embeddedServiceLiveAgentSidebar .minimizedContainer .help {margin-top:19px; padding-right:10px; color:#fff}
+.embeddedServiceLiveAgentSidebar .minimizedContainer .globalLoadingBall {font-size:6px; text-align:center; padding:6px; display:inline-block; -webkit-animation:ballanimate 2.25s infinite ease-in-out; animation:ballanimate 2.25s infinite ease-in-out}
+.embeddedServiceLiveAgentSidebar .minimizedContainer .ballTwo {-webkit-animation-delay:.75s; animation-delay:.75s}
+.embeddedServiceLiveAgentSidebar .minimizedContainer .ballThree {-webkit-animation-delay:1.5s; animation-delay:1.5s}
+@-webkit-keyframes ballanimate {
+  0% {font-size:6px}
+  16% {font-size:9px}
+  33% {font-size:6px}
+}
+@keyframes ballanimate {
+  0% {font-size:6px}
+  16% {font-size:9px}
+  33% {font-size:6px}
+}
+.embeddedServiceLiveAgentSidebar .minimizedContainer .loadingBall {position:absolute; display:inline-block; width:1em; height:1em; border-radius:1em; background-color:#22bf54}
+.embeddedServiceLiveAgentSidebar.minimized {background:transparent; box-shadow:none}
+.embeddedServiceLiveAgentSidebar .assistiveText {position:absolute!important; height:1px; width:1px; overflow:hidden; clip:rect(1px, 1px, 1px, 1px)}
+.embeddedServiceLiveAgentSidebar .menuHeader {background:#000; color:#fff; border-radius:8px 8px 0 0; line-height:3.4; text-align:center; font-weight:300; font-size:1rem; clear:both}
+.embeddedServiceLiveAgentSidebar .backgroundImg img {width:100%}
+.embeddedServiceLiveAgentSidebar .instructions {padding:10px 30px 0 30px; text-align:center; line-height:1.5; font-size:1rem}
+.embeddedServiceLiveAgentSidebar .menuAgentText {padding-left:60px}
+.embeddedServiceLiveAgentSidebar .headerItem {color:#fff; font-size:1.3rem}
+.embeddedServiceLiveAgentSidebar .closeButton {float:left}
+.embeddedServiceLiveAgentSidebar .popoutButton, .embeddedServiceLiveAgentSidebar .minimizeButton {float:right}
+.embeddedServiceLiveAgentSidebar .closeButton, .embeddedServiceLiveAgentSidebar .minimizeButton, .embeddedServiceLiveAgentSidebar .popoutButton {-webkit-transition:color .7s ease; transition:color .7s ease; padding:14px}
+.embeddedServiceLiveAgentSidebar .closeButton:hover, .embeddedServiceLiveAgentSidebar .minimizeButton:hover, .embeddedServiceLiveAgentSidebar .popoutButton:hover {color:#1ed760}
+@media only screen and (min-width: 48em) {
+  .embeddedServiceLiveAgentSidebar.modalContainer {background-color:transparent}
+  .embeddedServiceLiveAgentSidebar .dockableContainer {position:fixed; left:auto; bottom:0; right:26px; margin:0; width:320px; height:auto; max-height:100%; border-radius:8px 8px 0 0}
+}
+@media only screen and (max-width: 47.9375em) {
+  .embeddedServiceLiveAgentSidebar .minimizedContainer {border-radius:8px 8px 8px 8px; width:72px; height:72px; bottom:50%; background-color:#000}
+  .embeddedServiceLiveAgentSidebar .helpButtonMinimize {width:auto; bottom:11px; height:50px}
+  .embeddedServiceLiveAgentSidebar .minimizedContainer .minimizedImage {margin-right:0; margin-top:12px}
+  .embeddedServiceLiveAgentSidebar .minimizedContainer .minimizedText {font-size:.625rem; margin-top:8px; display:block}
+  .embeddedServiceLiveAgentSidebar .minimizedContainer .miniLoadingBallContainer {width:95%; margin-top:1px; display:block}
+  .embeddedServiceLiveAgentSidebar .minimizedContainer .hideMinimizeText {display:none}
 }
 </style>
