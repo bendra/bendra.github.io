@@ -103,6 +103,11 @@ $Lightning.use("embeddedService:liveAgentSidebarApp", function() {
 .uiButton--default:disabled .label {color:#888}
 .uiButton--default:disabled .label:hover {color:#888}
 
+.embeddedServiceIcon {display:inline-block}
+.embeddedServiceIcon:before {font-family:'embeddedserviceiconfont'; content:attr(data-icon); speak:none; text-rendering:auto; font-weight:normal; font-variant:normal; text-transform:none; line-height:1; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale}
+.embeddedServiceIcon .icon-fallback-text .icon {display:none}
+.embeddedServiceIcon.newAssistiveText {position:absolute; border:0; clip:rect(1px, 1px, 1px, 1px); width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; z-index:-1000; font-size:1px}
+
 .embeddedServiceLiveAgentHelpButton {text-align:right; position:fixed; bottom:11px; right:20px; height:50px}
 .embeddedServiceLiveAgentHelpButton .flatButton {padding:0 10px; margin:0; box-shadow:none; background:#000; font-size:1rem; color:#fff; font-weight:normal; color:#fff; border-radius:8px; text-shadow:none; line-height:50px; font-family:inherit}
 .embeddedServiceLiveAgentHelpButton .flatButton:hover {background:#22bf54}
