@@ -25,7 +25,7 @@ window.onload = function() {
 	// make sure we don't reload if already present
 	if (!document.getElementById("__SFDC_ESW_FRAME")) {
 		var html = " <body>\
-		<script src='https://bdrasin-ltm2.internal.salesforce.com:6101/lightning/lightning.out.js'></script> \
+		<script src='https://subbu--c.na1-blitz04.visual.soma.force.com/lightning/lightning.out.js'></script> \
 		<div id='button_goes_here'/> \
 	<script> \
     $Lightning.use('embeddedService:liveAgentSidebarApp', function() { \
