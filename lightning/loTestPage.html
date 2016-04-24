@@ -1,0 +1,18 @@
+<html>
+<head>
+<script src="http://bdrasin-ltm2.internal.salesforce.com:6109/lightning/lightning.out.js"/></script>
+</head>
+<body>
+<h1>Lightning Out Test Page</h1>
+<div id="lightning" />
+    <script>
+        $Lightning.use("c:outApp", function() {
+          $Lightning.createComponent("ui:button",
+          { label : "Press Me!" },
+          "lightning",
+          function(cmp) {
+          }, 'https://bdrasin-ltm-comm.localhost.force.com:6101/t3c1');
+        });
+    </script>
+</body>
+</html>
