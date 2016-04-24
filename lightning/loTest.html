@@ -6,12 +6,13 @@
 <h1>Lightning Out Test</h1>
 <div id="lightning" />
     <script>
+    console.log('hi, mom');
         $Lightning.use("c:loTest", function() {
           $Lightning.createComponent("ui:button",
           { label : "Press Me!" },
           "lightning",
           function(cmp) {
-          });
+          }, 'http://bdrasin-ltm2.internal.salesforce.com:6109/');
         });
     </script>
 </body>
