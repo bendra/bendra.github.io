@@ -8,6 +8,8 @@ url: "http://bendra.github.io" # the base hostname & protocol for your site
 twitter_username: uther_bendragon
 github_username:  bendra
 linkedin_username: bendrasin
+gems:
+  - jekyll-paginate
 
 
 paginate: 5
