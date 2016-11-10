@@ -6,13 +6,14 @@
 <h1>Lightning Out Test Page</h1>
 <div id="lightning" />
     <script>
+        var hostname=prompt("Please enter your host name");
         $Lightning.use("c:outApp", function() {
           $Lightning.createComponent("ui:button",
           { label : "Press Me!" },
           "lightning",
           function(cmp) {
           });
-        });
+        }, hostname);
     </script>
 </body>
 </html>
