@@ -11,7 +11,16 @@
 
 <div id="button_goes_here">
 </div>
-<style type='text/css'>.embeddedServiceLiveAgentChatButton .helpButton .uiButton {background-color: #005290; font-family: "Salesforce Sans", sans-serif;}</style>
+
+<style type='text/css'>
+.embeddedServiceLiveAgentChatButton .helpButton .uiButton { background-color: #005290; font-family: "Salesforce Sans", sans-serif; }
+.embeddedServiceLiveAgentChatButton .helpButton .uiButton:focus {outline: 2px solid #005290}
+@font-face {
+font-family: 'Salesforce Sans';
+src: url('https://www.sfdcstatic.com/system/shared/common/assets/fonts/SalesforceSans/SalesforceSans-Regular.woff') format('woff'),
+url('https://www.sfdcstatic.com/system/shared/common/assets/fonts/SalesforceSans/SalesforceSans-Regular.ttf') format('truetype');
+}
+</style>
 <script type='text/javascript' src='https://service.force.com/lightning/lightning.out.js'></script>
 <script type='text/javascript' src='https://service.force.com/embeddedservice/1.0/esw.min.js'></script>
 <script type='text/javascript'>
@@ -21,14 +30,14 @@ embedded_svc.settings.avatarImgURL = '';
 embedded_svc.settings.prechatBackgroundImgURL = '';
 embedded_svc.settings.waitingStateBackgroundImgURL = '';
 embedded_svc.settings.smallCompanyLogoImgURL = '';
-embedded_svc.settings.targetElement=document.getElementById("button_goes_here");
+
 
 embedded_svc.settings.displayHelpButton = true; //Or false
 //embedded_svc.settings.onlineText = '...'; (defaults to Chat with an Expert, localized)
 //embedded_svc.settings.offlineText = '...'; (defaults to Agent Offline, localized)
 //embedded_svc.settings.onlineLoadingText = '...'; (defaults to Loading, localized)
-embedded_svc.init('http://bdrasin-ltm2.internal.salesforce.com:6109', 'http://bdrasin-ltm2.internal.salesforce.com:8096/chat', 'http://bdrasin-ltm2.internal.salesforce.com:8095/content', 'http://eswcomm-158b6daf594.localhost.force.com:6109/koa1', '572xx000000008H', '00Dxx0000001gHV', '573xx000000008H', '1.0', gslbBaseUrl, '39.0', 'SnapinsDeployment2', 'EmbeddedServiceLiveAgent_Parent04Ixx000000000GEAQ_158bcee0878'); }; if (!window.embedded_svc) { var s = document.createElement('script'); s.setAttribute('src', 'http://bdrasin-ltm2.internal.salesforce.com:6109/embeddedservice/1.0/esw.js'); s.onload = function() { initESW(null); }; document.body.appendChild(s);} else { initESW('http://bdrasin-ltm2.internal.salesforce.com:6109'); }
-</script>	
+embedded_svc.init('http://bdrasin-ltm2.internal.salesforce.com:6109', 'http://bdrasin-ltm2.internal.salesforce.com:8096/chat', 'http://bdrasin-ltm2.internal.salesforce.com:8095/content', 'http://bdrasin-ltm-comm.localhost.force.com:6109/t3c1', '572xx0000000001', '00Dxx0000001gEg', '573xx0000000001', '1.0', gslbBaseUrl, '40.0', 'snappy1', 'EmbeddedServiceLiveAgent_Parent04Ixx0000000051EAA_1591ee941fa'); }; if (!window.embedded_svc) { var s = document.createElement('script'); s.setAttribute('src', 'http://bdrasin-ltm2.internal.salesforce.com:6109/embeddedservice/1.0/esw.min.js'); s.onload = function() { initESW(null); }; document.body.appendChild(s);} else { initESW('http://bdrasin-ltm2.internal.salesforce.com:6109'); }</script>   
+   
    </body>
 </html>
     <style>
