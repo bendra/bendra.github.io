@@ -3,8 +3,21 @@
     <p id="dummy"></p>
     <script>
     window.addEventListener('message', function (event) {
-      //TODO - cookie stuff, callback on read
-    }
+      var payload = message.data;
+      switch(payload.method) {
+        case 'createCookie':
+            createCookie(payload.data.key, payload.data.value);
+            break;
+        case 'readCookie':
+            var parent = window.parent;
+            var cookieData = readCookie(payload.data.key);
+            parent.postMessage( {method : 'cookieDataCallback', data: cookieData}, '*');
+            break;
+        case 'eraseCookie':
+            eraseCookie(payload.data.key);
+            break;
+      }
+    });
       document.domain = 'websnapins.com'; // should be top-level domain e.g. spotify.com
       //got this from stack overflow.  YMMV
       var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
