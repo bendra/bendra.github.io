@@ -10,7 +10,7 @@
             break;
         case 'readCookie':
             var cookieData = readCookie(payload.data.key);
-            parent.postMessage( {method : 'cookieDataCallback', data: cookieData}, message.origin);
+            parent.postMessage( {method : 'cookieDataCallback', target: payload.data.target, data: cookieData}, message.origin);
             break;
         case 'eraseCookie':
             eraseCookie(payload.data.key);
@@ -20,7 +20,7 @@
            break;
         case 'getSession':
            var sessionData = getSessionData(payload.data.key);
-           parent.postMessage({method : 'sessionDataCallback', data: sessionData});
+           parent.postMessage({method : 'sessionDataCallback', target: payload.data.target, data: sessionData});
            break;
         case 'removeSession':
           removeSessionData(payload.data.key);
@@ -30,7 +30,7 @@
           break;
         case 'getLocal':
           var localData = getLocalData(payload.data.key);
-          parent.postMessage({method : 'localDataCallback', data: localData});
+          parent.postMessage({method : 'localDataCallback', target: payload.data.target, data: localData});
           break;
       }
     });
