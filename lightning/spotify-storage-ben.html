@@ -15,6 +15,23 @@
         case 'eraseCookie':
             eraseCookie(payload.data.key);
             break;
+        case 'storeSession':
+           storeSessionData(paload.data.key, payload.data.value);
+           break;
+        case 'getSession':
+           var sessionData = getSessionData(payload.data.key);
+           parent.postMessage({method : 'sessionDataCallback', data: sessionData});
+           break;
+        case 'removeSession':
+          removeSessionData(payload.data.key);
+          break;
+        case 'storeLocal':
+          storeLocalData(payload.data.key);
+          break;
+        case 'getLocal':
+          var localData = getLocalData(payload.data.key);
+          parent.postMessage({method : 'localDataCallback', data: localData});
+          break;
       }
     });
       document.domain = 'bendra.github.io'; // should be top-level domain e.g. spotify.com
@@ -23,25 +40,27 @@
                navigator.userAgent && !navigator.userAgent.match('CriOS');
       
       function storeSessionData(key, data) {
-        if (isSafari)
-          localStorage.setItem(key, data); // due to bug with Safari incorrectly handling sessionStorage on iFrames
-        else
           sessionStorage.setItem(key, data);
       }
       function getSessionData(key, data) {
-        if (isSafari)
-          return localStorage.getItem(key); // due to bug with Safari incorrectly handling sessionStorage on iFrames
-        else
           return sessionStorage.getItem(key);
       }
       
       function removeSessionData(key) {
-        if (isSafari)
-          return localStorage.removeItem(key); // due to bug with Safari incorrectly handling sessionStorage on iFrames
-        else
           return sessionStorage.removeItem(key);
       }
+
+      function storeLocalData(key, data) {
+          localStorage.setItem(key, data);
+      }
+      function getLocalData(key, data) {
+          return localStorage.getItem(key);
+      }
       
+      function removeLocalData(key) {
+          return localStorage.removeItem(key);
+      }
+          
       function createCookie(name,value,days) {
         var expires = "";
         if (days) {
