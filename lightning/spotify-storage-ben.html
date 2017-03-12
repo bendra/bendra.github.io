@@ -9,9 +9,8 @@
             createCookie(payload.data.key, payload.data.value);
             break;
         case 'readCookie':
-            var parent = window.parent;
             var cookieData = readCookie(payload.data.key);
-            parent.postMessage( {method : 'cookieDataCallback', data: cookieData}, '*');
+            parent.postMessage( {method : 'cookieDataCallback', data: cookieData}, message.origin);
             break;
         case 'eraseCookie':
             eraseCookie(payload.data.key);
