@@ -20,7 +20,7 @@
            break;
         case 'getSession':
            var sessionData = getSessionData(payload.key);
-           parent.postMessage({method : 'sessionDataCallback', target: payload.target, data: sessionData});
+           parent.postMessage({method : 'sessionDataCallback', target: payload.target, data: sessionData}, message.origin);
            break;
         case 'removeSession':
           removeSessionData(payload.key);
@@ -30,7 +30,7 @@
           break;
         case 'getLocal':
           var localData = getLocalData(payload.key);
-          parent.postMessage({method : 'localDataCallback', target: payload.target, data: localData});
+          parent.postMessage({method : 'localDataCallback', target: payload.target, data: localData}, message.origin);
           break;
       }
     });
