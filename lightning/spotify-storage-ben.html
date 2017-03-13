@@ -16,7 +16,7 @@
             eraseCookie(payload.key);
             break;
         case 'storeSession':
-           storeSessionData(paload.key, payload.value);
+           storeSessionData(payload.key, payload.value);
            break;
         case 'getSession':
            var sessionData = getSessionData(payload.key);
