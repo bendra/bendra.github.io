@@ -6,31 +6,31 @@
       var payload = message.data;
       switch(payload.method) {
         case 'createCookie':
-            createCookie(payload.data.key, payload.data.value);
+            createCookie(payload.key, payload.value);
             break;
         case 'readCookie':
-            var cookieData = readCookie(payload.data.key);
-            parent.postMessage( {method : 'cookieDataCallback', target: payload.data.target, data: cookieData}, message.origin);
+            var cookieData = readCookie(payload.key);
+            parent.postMessage( {method : 'cookieDataCallback', target: payload.target, data: cookieData}, message.origin);
             break;
         case 'eraseCookie':
-            eraseCookie(payload.data.key);
+            eraseCookie(payload.key);
             break;
         case 'storeSession':
-           storeSessionData(paload.data.key, payload.data.value);
+           storeSessionData(paload.key, payload.value);
            break;
         case 'getSession':
-           var sessionData = getSessionData(payload.data.key);
-           parent.postMessage({method : 'sessionDataCallback', target: payload.data.target, data: sessionData});
+           var sessionData = getSessionData(payload.key);
+           parent.postMessage({method : 'sessionDataCallback', target: payload.target, data: sessionData});
            break;
         case 'removeSession':
-          removeSessionData(payload.data.key);
+          removeSessionData(payload.key);
           break;
         case 'storeLocal':
-          storeLocalData(payload.data.key);
+          storeLocalData(payload.key);
           break;
         case 'getLocal':
-          var localData = getLocalData(payload.data.key);
-          parent.postMessage({method : 'localDataCallback', target: payload.data.target, data: localData});
+          var localData = getLocalData(payload.key);
+          parent.postMessage({method : 'localDataCallback', target: payload.target, data: localData});
           break;
       }
     });
