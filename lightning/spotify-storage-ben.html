@@ -26,7 +26,7 @@
           removeSessionData(payload.key);
           break;
         case 'storeLocal':
-          storeLocalData(payload.key);
+          storeLocalData(payload.key, payload.value);
           break;
         case 'getLocal':
           var localData = getLocalData(payload.key);
