@@ -21,6 +21,25 @@ url('https://www.sfdcstatic.com/system/shared/common/assets/fonts/SalesforceSans
 }
 </style>
 <script type='text/javascript'>
+
+window.addEventListener("beforeunload", function(event){
+   console.log("PAGE 2: BEFOREUNLOAD");
+});
+window.addEventListener("pagehide", function(event){
+   console.log("PAGE 2: PAGEHIDE");
+});
+   
+window.addEventListener("pageshow", function(event){
+   console.log("PAGE 2: PAGESHOW");
+});
+   
+window.addEventListener("load", function(event){
+   console.log("PAGE 2: LOAD");
+});
+   
+window.addEventListener("popstate", function(event){
+   console.log("PAGE 2: POPSTATE");
+});
 var initESW = function(gslbBaseUrl) {
 embedded_svc.settings.avatarImgURL = '';
 embedded_svc.settings.prechatBackgroundImgURL = '';
