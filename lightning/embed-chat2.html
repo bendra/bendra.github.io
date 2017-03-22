@@ -21,7 +21,8 @@ url('https://www.sfdcstatic.com/system/shared/common/assets/fonts/SalesforceSans
 }
 </style>
 <script type='text/javascript'>
-
+var pageCount = 0;
+   
 window.addEventListener("beforeunload", function(event){
    console.log("PAGE 2: BEFOREUNLOAD");
 });
@@ -32,6 +33,7 @@ window.addEventListener("pagehide", function(event){
 window.addEventListener("pageshow", function(event){
    debugger;
    console.log("PAGE 2: PAGESHOW");
+   alert("hi " + pageCount++);
 });
    
 window.addEventListener("load", function(event){
