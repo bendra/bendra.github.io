@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
    <head>
@@ -21,21 +20,37 @@ src: url('https://www.sfdcstatic.com/system/shared/common/assets/fonts/Salesforc
 url('https://www.sfdcstatic.com/system/shared/common/assets/fonts/SalesforceSans/SalesforceSans-Regular.ttf') format('truetype');
 }
 </style>
-<script type='text/javascript' src='https://service.force.com/embeddedservice/2.0/esw.min.js'></script>
 <script type='text/javascript'>
+var pageCount = 0;
+   
+window.addEventListener("beforeunload", function(event){
+   console.log("PAGE 2: BEFOREUNLOAD");
+});
+window.addEventListener("pagehide", function(event){
+   console.log("PAGE 2: PAGEHIDE");
+});
+   
+window.addEventListener("pageshow", function(event){
+   console.log("PAGE 2: PAGESHOW");
+});
+   
+window.addEventListener("load", function(event){
+   console.log("PAGE 2: LOAD");
+});
+   
+window.addEventListener("popstate", function(event){
+   console.log("PAGE 2: POPSTATE");
+});
 var initESW = function(gslbBaseUrl) {
-
 embedded_svc.settings.avatarImgURL = '';
 embedded_svc.settings.prechatBackgroundImgURL = '';
 embedded_svc.settings.waitingStateBackgroundImgURL = '';
 embedded_svc.settings.smallCompanyLogoImgURL = '';
-
-
 embedded_svc.settings.displayHelpButton = true; //Or false
-//embedded_svc.settings.defaultMinimizedText = '...'; (defaults to Chat with an Expert, localized)
+//embedded_svc.settings.onlineText = '...'; (defaults to Chat with an Expert, localized)
 //embedded_svc.settings.offlineText = '...'; (defaults to Agent Offline, localized)
 //embedded_svc.settings.onlineLoadingText = '...'; (defaults to Loading, localized)
-embedded_svc.init('http://bdrasin-ltm2.internal.salesforce.com:6109', 'http://bdrasin-ltm2.internal.salesforce.com:8096/chat', 'http://bdrasin-ltm2.internal.salesforce.com:8095/content', 'http://mysite.localhost.force.com:6109/aNewSite', '572xx0000000001', '00Dxx0000001gEg', '573xx0000000001', '2.0', gslbBaseUrl, '40.0', 'snappysite', 'EmbeddedServiceLiveAgent_Parent04Ixx000000006EEAQ_15a38b4bd35'); }; if (!window.embedded_svc) { var s = document.createElement('script'); s.setAttribute('src', 'http://bdrasin-ltm2.internal.salesforce.com:6109/embeddedservice/2.0/esw.min.js'); s.onload = function() { initESW(null); }; document.body.appendChild(s);} else { initESW('http://bdrasin-ltm2.internal.salesforce.com:6109'); }</script>
+embedded_svc.init('http://bdrasin-ltm2.internal.salesforce.com:6109', 'http://bdrasin-ltm2.internal.salesforce.com:8096/chat', 'http://bdrasin-ltm2.internal.salesforce.com:8095/content', 'http://mysite.localhost.soma.force.com:6109/aNewSite', '572xx0000000001', '00Dxx0000001gEg', '573xx0000000001', '2.0', gslbBaseUrl, '40.0', 'snappy1', 'EmbeddedServiceLiveAgent_Parent04Ixx0000000051EAA_1591ee941fa'); }; if (!window.embedded_svc) { var s = document.createElement('script'); s.setAttribute('src', 'http://bdrasin-ltm2.internal.salesforce.com:6109/embeddedservice/2.0/esw.js'); s.onload = function() { initESW(null); }; document.body.appendChild(s);} else { initESW('http://bdrasin-ltm2.internal.salesforce.com:6109'); }</script>   
    
    </body>
 </html>
@@ -52,6 +67,3 @@ embedded_svc.init('http://bdrasin-ltm2.internal.salesforce.com:6109', 'http://bd
             
       }
     </style>
-
-
-
