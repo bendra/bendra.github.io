@@ -1,0 +1,20 @@
+<html>
+<head>
+<script language="javascript">
+function setiframeToAboutBlank(){
+  var iframe=document.getElementById("myIframe");
+  iframe.src="about:blank";
+}
+
+function setIframeToHttpsPage(){
+  var iframe=document.getElementById("myIframe");
+  iframe.src="spotify-storage-ben.html";
+}
+</script>
+</head>
+<H1>Hi, Mom</H1>
+<p>
+<a href="javascript:setIframeToAboutBlank()">setToAboutBlank</a>
+<a href="javascript:setIframeToHttpsPage()">setToHttpsPage</a>
+<iframe id="myIframe"></iframe>
+</html>
