@@ -28,7 +28,7 @@ Graphically, this looks like:
 input:  [3, 5, 2]
 array1: [1, 3, 15]// (that is, 1, 1*3, 1*3*5)
 array2: [10, 2, 1]// (that is, 1*2*5, 1*2, 1)  
-output: [10, 6, 15]//(that is, 1*10, 6*2, 15*1)
+output: [10, 6, 15]//(that is, 1*10, 3*2, 15*1)
 {% endhighlight %}
 
 # Classic Java solution
